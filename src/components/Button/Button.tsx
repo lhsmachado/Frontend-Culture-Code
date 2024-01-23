@@ -1,6 +1,10 @@
 import * as S from "../Button/Button.Styled";
 
-const ButtonProps = () => {
+interface IButton {
+  name: string;
+}
+
+const ButtonProps = ({ name }: IButton) => {
   return (
     <>
       <S.Button
@@ -11,7 +15,7 @@ const ButtonProps = () => {
         customPadding=""
         customWidth=""
       >
-        Button
+        {name}
       </S.Button>
     </>
   );
