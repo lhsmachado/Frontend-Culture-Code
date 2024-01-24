@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ImgFullBannerLogin from "../../assets/fullBannerLogin.png";
+import ImgFullBannerLoginMobile from "../../assets/fullBannerLoginMobile.png";
 
 export const Container = styled.div`
   position: relative;
@@ -21,6 +22,10 @@ export const Container = styled.div`
   background-size: cover;
   background-position: center;
   z-index: 0;
+
+  @media screen and (max-width: 728px) {
+    background-image: url(${ImgFullBannerLoginMobile});
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -35,5 +40,24 @@ export const Wrapper = styled.div`
   gap: 51px;
   width: 50%;
   z-index: 2;
-  
+  @media screen and (max-width: 728px) {
+    width: 100%;
+    margin: 30% 0 0 0;
+  }
+`;
+
+export const DivImgLog = styled.div`
+  @media screen and (max-width: 728px) {
+    width: 90%;
+  }
+`;
+
+export const ImgLogo = styled.img`
+  width: 100%;
+`;
+
+export const DivButton = styled.div`
+  @media screen and (max-width: 728px) {
+    margin: 50% 0 0 0;
+  }
 `;

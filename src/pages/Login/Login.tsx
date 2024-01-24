@@ -6,18 +6,22 @@ export const Login = () => {
   return (
     <S.Container>
       <S.Wrapper>
-        <img src={Icon} alt="Vector Icon" />
-        <ButtonProps
-          name="Fazer Login"
-          customColors="#502B6B "
-          customBackground="#DCB6F8"
-          customFontWeight="700"
-          customFontsize="18px"
-          customFontFamily="Sora"
-          customHeight="72px"
-          customPadding=""
-          customWidth="382px"
-        />
+        <S.DivImgLog>
+          <S.ImgLogo src={Icon} alt="Vector Icon" />
+        </S.DivImgLog>
+        <S.DivButton>
+          <ButtonProps
+            name="Fazer Login"
+            customColors="#502B6B "
+            customBackground="#DCB6F8"
+            customFontWeight="700"
+            customFontsize="1.2rem"
+            customFontFamily="Sora"
+            customHeight=""
+            customPadding="6%"
+            customWidth="21rem"
+          />
+        </S.DivButton>
       </S.Wrapper>
     </S.Container>
   );
