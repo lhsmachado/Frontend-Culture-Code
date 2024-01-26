@@ -10,6 +10,10 @@ interface IButton {
   customWidth: string;
   customBackground: string;
   customFontFamily: string;
+  customBackgroundHover:string;
+  isOpen?: boolean;
+  onClick: () => void;
+
 }
 
 const ButtonProps = ({
@@ -22,23 +26,32 @@ const ButtonProps = ({
   customWidth,
   customBackground,
   customFontFamily,
+  customBackgroundHover,
+  onClick,
+  isOpen
 }: IButton) => {
-  return (
-    <>
-      <S.Button
-        customColors={customColors}
-        customBackground={customBackground}
-        customFontWeight={customFontWeight}
-        customFontsize={customFontsize}
-        customHeight={customHeight}
-        customPadding={customPadding}
-        customWidth={customWidth}
-        customFontFamily={customFontFamily}
-      >
-        {name}
-      </S.Button>
-    </>
-  );
+  if (isOpen) {
+    return (
+      <>
+        <S.Button
+          customColors={customColors}
+          customBackground={customBackground}
+          customFontWeight={customFontWeight}
+          customFontsize={customFontsize}
+          customHeight={customHeight}
+          customPadding={customPadding}
+          customWidth={customWidth}
+          customFontFamily={customFontFamily}
+          customBackgroundHover={customBackgroundHover}
+          
+          onClick={onClick}
+        >
+          {name}
+        </S.Button>
+      </>
+    );
+  }
+ 
 };
 
 export default ButtonProps;

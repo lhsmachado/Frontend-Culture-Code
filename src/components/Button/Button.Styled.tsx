@@ -9,6 +9,7 @@ interface IButtonProps {
   customFontWeight: string;
   customBackground: string;
   customFontFamily: string;
+  customBackgroundHover: string;
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -25,7 +26,8 @@ export const Button = styled.button<IButtonProps>`
   cursor: pointer;
 
   &:hover {
-    background: #e3c4f9;
+    /* background: #e3c4f9; */
+    background: ${(props) => props.customBackgroundHover};
   }
 
   @media screen and (max-width: 768px) {
