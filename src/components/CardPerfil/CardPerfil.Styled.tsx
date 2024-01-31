@@ -8,13 +8,13 @@ export const Container = styled.div`
   gap: 15px;
 
   @media screen and (max-width: 728px) {
-    margin: 30% 0 0 0;
+    margin: 25% 0 0 0;
   }
 `;
 
 export const ImgUser = styled.img`
   border-radius: 50%;
-  border: 5px solid #dcb6f8;
+  border: 2px solid #dcb6f8;
   width: 50px;
   height: 50px;
   object-fit: cover;
@@ -34,4 +34,9 @@ export const TitleNameUser = styled.h3`
   font-weight: 400;
   line-height: 150%; /* 36px */
   letter-spacing: 0.2px;
+  @media screen and (max-width: 728px) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+  }
 `;
