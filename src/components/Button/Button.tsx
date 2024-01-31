@@ -12,7 +12,7 @@ interface IButton {
   customFontFamily: string;
   customBackgroundHover:string;
   isOpen?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 
 }
 
