@@ -19,19 +19,19 @@ const cardProduct = ({ image, title, gems, id }: cardProductType) => {
       <S.Title>{title}</S.Title>
       <S.SubTitle>{gems} jóias</S.SubTitle>
       <ButtonProps
-              name="Fazer Login"
-              customColors="#502B6B "
-              customBackground="#DCB6F8"
-              customFontWeight="700"
+              name="Resgatar"
+              customColors="#FFFFFF "
+              customBackground="#502B6B"
+              customFontWeight="600"
               customFontsize="1.2rem"
               customFontFamily="Sora"
-              customHeight=""
-              customPadding="6%"
-              customWidth="21rem"
+              customHeight="2.5rem"
+              customPadding=""
+              customWidth="14.875rem"
               customBackgroundHover="#d4a3f6"
               onClick={handleClick}
+              isOpen={true}
             />
-            <button>teste</button>
     </S.Container>
   );
 };

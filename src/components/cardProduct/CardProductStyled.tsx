@@ -5,6 +5,10 @@ export const Container = styled.div`
     height: 320px;
     display: flex;
     flex-direction: column;
+    button{
+        margin-left: 5%;
+        border-radius: 8px;
+    }
 
 `
 
@@ -23,6 +27,8 @@ export const Title = styled.h3`
     line-height: 130%;
     letter-spacing: 0.2px;
     color: #212121;
+    margin-left: 5%;
+    margin-top: 5%;
 `
 
 export const SubTitle = styled.h4`
@@ -33,4 +39,6 @@ export const SubTitle = styled.h4`
     line-height: 140%; 
     letter-spacing: 0.2px;
     color: #e9e9e9;
+    margin-left: 5%;
+    margin-bottom: 5%;
 `
