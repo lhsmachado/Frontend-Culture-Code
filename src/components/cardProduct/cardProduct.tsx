@@ -27,7 +27,7 @@ const cardProduct = ({ image, title, gems, id }: cardProductType) => {
               customFontFamily="Sora"
               customHeight="2.5rem"
               customPadding=""
-              customWidth="14.875rem"
+              customWidth=""
               customBackgroundHover="#d4a3f6"
               onClick={handleClick}
               isOpen={true}

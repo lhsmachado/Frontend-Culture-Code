@@ -38,7 +38,7 @@ export const SubTitle = styled.h4`
     font-weight: 400;
     line-height: 140%; 
     letter-spacing: 0.2px;
-    color: #e9e9e9;
+    color: #b1afaf;
     margin-left: 5%;
     margin-bottom: 5%;
 `
