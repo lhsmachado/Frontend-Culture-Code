@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <CardProduct image={"src/assets/productMock.svg"} title={""} gems={2} id={"id"} />
-      {/* <Rotas /> */}
+      {/* <CardProduct image={"src/assets/productMock.svg"} title={"bdfbdb"} gems={55} id={"id"} /> */}
+      <Rotas />
     </>
   );
 }
