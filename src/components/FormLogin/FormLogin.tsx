@@ -50,6 +50,7 @@ const FormLogin = () => {
             customFontFamily="Sora"
             customFontWeight="700"
             customFontsize="1.5rem"
+            customBorderRadius="16px"
             customPadding=""
             customBackground=" #502B6B"
             customBackgroundHover="#60357e"

@@ -23,3 +23,17 @@ export const DivMediumBanner = styled.div`
     margin: 15% 0 0 0;
   }
 `;
+
+export const DivCardProducts = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin: 1% 0 0 0;
+  align-items: center;
+
+  @media screen and (max-width: 728px) {
+    flex-direction: column;
+    margin: 15% 0 0 0;
+  }
+`;

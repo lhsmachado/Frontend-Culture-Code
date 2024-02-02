@@ -10,7 +10,10 @@ interface IButton {
   customWidth: string;
   customBackground: string;
   customFontFamily: string;
+  customBorderRadius: string;
   customBackgroundHover:string;
+  
+  
   isOpen?: boolean;
   onClick?: () => void;
 
@@ -26,6 +29,7 @@ const ButtonProps = ({
   customWidth,
   customBackground,
   customFontFamily,
+  customBorderRadius,
   customBackgroundHover,
   onClick,
   isOpen
@@ -43,6 +47,7 @@ const ButtonProps = ({
           customWidth={customWidth}
           customFontFamily={customFontFamily}
           customBackgroundHover={customBackgroundHover}
+          customBorderRadius={customBorderRadius}
           
           onClick={onClick}
         >

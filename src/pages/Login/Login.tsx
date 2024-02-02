@@ -28,6 +28,7 @@ const Login = () => {
               customFontWeight="700"
               customFontsize="1.2rem"
               customFontFamily="Sora"
+              customBorderRadius="16px"
               customHeight=""
               customPadding="6%"
               customWidth="21rem"
