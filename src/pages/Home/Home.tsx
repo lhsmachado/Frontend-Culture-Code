@@ -50,6 +50,31 @@ const Home = () => {
           title="Headphone WB20BT Bluetooth"
           gems={50}
         />
+        <CardProduct
+          image={ImgProducts}
+          title="Headphone WB20BT Bluetooth"
+          gems={50}
+        />
+        <CardProduct
+          image={ImgProducts}
+          title="Headphone WB20BT Bluetooth"
+          gems={50}
+        />
+        <CardProduct
+          image={ImgProducts}
+          title="Headphone WB20BT Bluetooth"
+          gems={50}
+        />
+        <CardProduct
+          image={ImgProducts}
+          title="Headphone WB20BT Bluetooth"
+          gems={50}
+        />
+        <CardProduct
+          image={ImgProducts}
+          title="Headphone WB20BT Bluetooth"
+          gems={50}
+        />
       </S.DivCardProducts>
     </>
   );

@@ -94,15 +94,15 @@ export const LinkviewProducts = styled(Link)`
 export const DivCardProducts = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  width: 100%;
-  margin: 1% 0 0 0;
-  align-items: center;
   
-
+  gap: 30px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2%;
+  
   @media screen and (max-width: 728px) {
     flex-direction: column;
+    width: 100%;
     margin: 2% 0 0 0;
   }
 `;
