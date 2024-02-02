@@ -1,9 +1,12 @@
 import * as S from "../Home/Home.Styled";
+import ImgProducts from '../../assets/headset.png'
 import CardBalance from "../../components/CardBalance/CardBalance";
 import FullBanner from "../../components/FullBanner/FullBanner";
 import Navigation from "../../components/Navigation/Navigation";
 import Search from "../../components/Search/Search";
 import MediumBanner from "../../components/MediumBanner/MediumBanner";
+import CardProduct from "../../components/CardProduct/CardProduct";
+
 
 const Home = () => {
   return (
@@ -18,6 +21,14 @@ const Home = () => {
       <S.DivMediumBanner>
         <MediumBanner/>
       </S.DivMediumBanner>
+        
+      <S.DivCardProducts>
+        
+        <CardProduct image={ImgProducts} title="Headphone WB20BT Bluetooth" gems={50}   />
+        <CardProduct image={ImgProducts} title="Headphone WB20BT Bluetooth" gems={50}   />
+        <CardProduct image={ImgProducts} title="Headphone WB20BT Bluetooth" gems={50}   />
+        <CardProduct image={ImgProducts} title="Headphone WB20BT Bluetooth" gems={50}   />
+      </S.DivCardProducts>
     </>
   );
 };
