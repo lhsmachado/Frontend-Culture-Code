@@ -11,7 +11,12 @@ const Home = () => {
   return (
     <>
       <FullBanner>
-        <Navigation />
+        <Navigation
+          customColorslinks="#ffffff"
+          home="Home"
+          produtos="Produtos"
+          myPerfil="Meu Perfil"
+        />
         <CardBalance />
       </FullBanner>
       <S.DivSearch>
