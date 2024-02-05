@@ -4,7 +4,7 @@ export const ContainerMenu = styled.div`
     display: flex;
     flex-direction: column;
     width: 23.75rem; 
-    .teste{
+    .border{
         border-top: 1px solid #EEEEEE;
     }
 
