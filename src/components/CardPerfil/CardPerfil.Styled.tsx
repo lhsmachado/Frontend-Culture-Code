@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+interface ICardPerfil {
+customColors:string
+
+
+}
+
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -26,8 +32,8 @@ export const ImgUser = styled.img`
   }
 `;
 
-export const TitleNameUser = styled.h3`
-  color: #fff;
+export const TitleNameUser = styled.h3<ICardPerfil>`
+  color: ${(props) => props.customColors};
   font-family: Sora;
   font-size: 24px;
   font-style: normal;
@@ -40,3 +46,8 @@ export const TitleNameUser = styled.h3`
     font-weight: 400;
   }
 `;
+
+export const TitleNameStrong = styled.strong<ICardPerfil>`
+ color: ${(props) => props.customColors};
+
+`

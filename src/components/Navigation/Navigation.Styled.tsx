@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+interface INavigatioStyled {
+  customColors: string
+}
+
 export const Conatainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -19,8 +23,8 @@ export const DivLinksNavigation = styled.div`
   }
 `;
 
-export const Links = styled(Link)`
-  color: #fff;
+export const Links = styled(Link)<INavigatioStyled>`
+  color: ${(props) => props.customColors};
 
   font-family: Sora;
   font-size: 18px;
