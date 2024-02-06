@@ -13,7 +13,6 @@ const Products = () => {
           myPerfil="Meu Perfil"
         />
       </S.DivNavigate>
-
       <CardProductsRedeems />
     </>
   );
