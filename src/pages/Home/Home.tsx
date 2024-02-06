@@ -5,7 +5,7 @@ import FullBanner from "../../components/FullBanner/FullBanner";
 import Navigation from "../../components/Navigation/Navigation";
 import Search from "../../components/Search/Search";
 import MediumBanner from "../../components/MediumBanner/MediumBanner";
-import CardProduct from "../../components/CardProduct/CardProduct";
+import CardProduct from "../../components/cardProduct/cardProduct";
 
 const Home = () => {
   return (
