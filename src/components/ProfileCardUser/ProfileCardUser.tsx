@@ -1,4 +1,4 @@
-import * as S from "./ProfileCardStyle"
+import * as S from "./ProfileCardUserStyle"
 import userImg from "../../assets/imguser.png"
 const ProfileCard = () =>{
 
