@@ -9,11 +9,19 @@ export const Container = styled.div`
     flex-direction: column;
   }
 `;
+
+export const DivMyBalance = styled.div`
+  margin: 5% 0 0 0;
+
+  @media screen and (min-width: 728px) {
+    display: none;
+  }
+`;
 export const DivImage = styled.div`
   width: 40%;
   align-items: center;
   text-align: center;
-  background: red;
+
   @media screen and (max-width: 728px) {
     width: 100%;
   }
@@ -30,15 +38,13 @@ export const DivDescription = styled.div`
 
   width: 50%;
   margin: 0 0 5% 0;
-  background: green;
 
-@media screen and (max-width: 728px) {
+  @media screen and (max-width: 728px) {
     width: 100%;
   }
 `;
 
 export const Title = styled.h1`
-
   font-family: Sora;
   font-size: 1.5rem;
   font-style: normal;
@@ -52,18 +58,20 @@ export const Title = styled.h1`
 `;
 
 export const DivCardRedeemFor = styled.div`
-  background: blue;
   margin: 3% 0 0 0;
+
+  @media screen and (max-width: 728px) {
+    padding: 0 0 0 2%;
+  }
 `;
 
 export const DivTextDescription = styled.div`
   margin: 5% 0 0 0;
-  background: yellow;
+
   width: 100%;
 
   @media screen and (max-width: 728px) {
     width: 100%;
-    
   }
 `;
 
@@ -76,17 +84,13 @@ export const TextDescription = styled.p`
   letter-spacing: 0.2px;
   color: #212121;
   @media screen and (max-width: 728px) {
-    
     padding: 2% 2% 0 2%;
   }
 `;
 
 export const DivButton = styled.div`
-
-
   width: 40%;
   margin-top: 25%;
-  background: gray;
 
   @media screen and (max-width: 1368px) {
     margin-top: 20%;
@@ -95,10 +99,7 @@ export const DivButton = styled.div`
   @media screen and (max-width: 728px) {
     width: 80%;
     margin: 0 auto;
-    margin-top: 3%;
+    margin-top: 6%;
     margin-bottom: 3%;
-    
   }
-
-  
 `;
