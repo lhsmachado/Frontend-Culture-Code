@@ -34,6 +34,13 @@ export const JewelsContainer = styled.div`
         border-radius: 1rem;
     }
 `
+export const JewelPic = styled.img`
+    img{
+            padding: 0.5rem;
+            border: 1px solid #EEEEEE;
+            border-radius: 1rem;
+        }
+`
 
 export const JewelsTexts = styled.div`
     display: flex;

@@ -5,6 +5,7 @@ import joiaAzul from "../../assets/joiaazul.png"
 
 
 const ProfileCardJewels = () =>{
+    
 
     return(
         <S.Container>
@@ -28,7 +29,7 @@ const ProfileCardJewels = () =>{
             </S.JewelsContainer>
             <S.JewelsContainer>
             <div>
-                    <img src={joiaRoxa} alt="" />
+                    <S.JewelPic src={joiaRoxa} alt="" />
                 </div>
                 <S.JewelsTexts>
                     <S.JewelTitle> Joia do poder</S.JewelTitle>
