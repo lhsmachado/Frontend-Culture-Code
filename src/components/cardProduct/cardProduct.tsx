@@ -1,5 +1,5 @@
 import ButtonProps from "../Button/Button";
-import * as S from "../CardProduct/CardProductStyled";
+import * as S from "../cardProduct/CardProductStyled";
 import Imgheart from "../../assets/heart-line.svg";
 
 interface ICardProductType {
