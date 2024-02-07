@@ -49,6 +49,7 @@ const CardProductsRedeems = () => {
             customFontFamily="Sora"
             customFontWeight="700"
             customFontsize="1.5rem"
+            customBorder="none"
             customBorderRadius="16px"
             customPadding=""
             customBackground=" #502B6B"

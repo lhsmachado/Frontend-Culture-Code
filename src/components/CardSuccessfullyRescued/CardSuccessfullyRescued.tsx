@@ -45,11 +45,12 @@ const CardSuccessfullyRescued = () => {
             customColors="#60357e"
             customFontFamily="Sora"
             customFontWeight="700"
-            customFontsize="1.5rem"
+            customFontsize="1.2rem"
             customBorderRadius="16px"
+            customBorder="2px solid #60357e"
             customPadding=""
             customBackground=" #ffff"
-            customBackgroundHover="#60357e"
+            customBackgroundHover=""
             onClick={handleFake}
             isOpen={true}
           />
