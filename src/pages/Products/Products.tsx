@@ -2,8 +2,13 @@ import * as S from "../Products/Products.Styled";
 import CardProductsRedeems from "../../components/CardProductsRedeems/CardProductsRedeems";
 import Navigation from "../../components/Navigation/Navigation";
 import CardSuccessfullyRescued from "../../components/CardSuccessfullyRescued/CardSuccessfullyRescued";
+import { useState } from "react";
 
 const Products = () => {
+  const [cards, setCards] = useState("");
+
+  const cardRestadado = () => setCards("rescued");
+
   return (
     <>
       <S.DivNavigate>
@@ -14,8 +19,12 @@ const Products = () => {
           myPerfil="Meu Perfil"
         />
       </S.DivNavigate>
-      <CardProductsRedeems />
-      <CardSuccessfullyRescued/>
+
+      {cards === "rescued" ? (
+        <CardSuccessfullyRescued />
+      ) : (
+        <CardProductsRedeems onClick={cardRestadado} />
+      )}
     </>
   );
 };

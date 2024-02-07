@@ -5,10 +5,14 @@ import ImgLeft from "../../assets/left-small.png";
 import CardRedeemFor from "../CardRedeemFor/CardRedeemFor";
 import CardMyBalance from "../CardMyBalance/CardMyBalance";
 
-const CardProductsRedeems = () => {
-  const handleFake = () => {
-    console.log("estou esperando funcionar");
-  };
+interface ICardProductsRedeems {
+  onClick: () => void;
+} 
+
+
+
+const CardProductsRedeems = ({onClick}:ICardProductsRedeems) => {
+  
   return (
     <S.Container>
       <S.DivMyBalance>
@@ -54,7 +58,7 @@ const CardProductsRedeems = () => {
             customPadding=""
             customBackground=" #502B6B"
             customBackgroundHover="#60357e"
-            onClick={handleFake}
+            onClick={onClick}
             isOpen={true}
           />
         </S.DivButton>

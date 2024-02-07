@@ -1,6 +1,7 @@
 import * as S from "./CardProductStyled";
-import Imgheart from "../../assets/heart-line.svg";
 import ButtonProps from "../Button/Button";
+import Imgheart from "../../assets/heart-line.svg";
+
 
 
 
