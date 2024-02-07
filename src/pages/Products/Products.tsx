@@ -1,6 +1,7 @@
 import * as S from "../Products/Products.Styled";
 import CardProductsRedeems from "../../components/CardProductsRedeems/CardProductsRedeems";
 import Navigation from "../../components/Navigation/Navigation";
+import CardSuccessfullyRescued from "../../components/CardSuccessfullyRescued/CardSuccessfullyRescued";
 
 const Products = () => {
   return (
@@ -13,7 +14,8 @@ const Products = () => {
           myPerfil="Meu Perfil"
         />
       </S.DivNavigate>
-      <CardProductsRedeems />
+      {/* <CardProductsRedeems /> */}
+      <CardSuccessfullyRescued/>
     </>
   );
 };
