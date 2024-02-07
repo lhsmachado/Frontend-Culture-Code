@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface IButtonProps {
   customWidth: string;
   customHeight: string;
+  customBorder: string;
   customPadding: string;
   customColors: string;
   customFontsize: string;
@@ -23,8 +24,8 @@ export const Button = styled.button<IButtonProps>`
   font-weight: ${(props) => props.customFontWeight};
   font-family: ${(props) => props.customFontFamily};
   border-radius: ${(props) => props.customBorderRadius};
-  border: none;
-  /* border-radius: 16px; */
+  border: ${(props) => props.customBorder};
+  
   cursor: pointer;
 
   &:hover {
