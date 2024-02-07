@@ -49,6 +49,13 @@ export const DivTitleProduct = styled.div`
   }
 `;
 
+export const DivCardSmallProductsSuccess = styled.div`
+  margin: 5% 0 5% 0;
+
+  @media screen and (max-width: 728px) {
+  }
+`;
+
 export const Title = styled.h1`
   font-family: Sora;
   font-size: 1.5rem;
