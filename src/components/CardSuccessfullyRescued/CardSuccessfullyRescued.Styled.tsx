@@ -12,6 +12,7 @@ export const Container = styled.div`
 
 export const DivMyBalance = styled.div`
   margin: 5% 0 0 0;
+  
 
   @media screen and (min-width: 728px) {
   }
