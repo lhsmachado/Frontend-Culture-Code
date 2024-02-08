@@ -23,7 +23,7 @@ const Navigation = ({
   }
 
   let customColorsStrong = "#ffff";
-  if (location.pathname === "/produtos") {
+  if (location.pathname === "/produtos" || location.pathname === "/perfil") {
     customColorsStrong = "#8638e5";
   }
 
@@ -43,7 +43,7 @@ const Navigation = ({
         <S.Links customColors={customColorslinks} to={"/produtos"}>
           {produtos}
         </S.Links>
-        <S.Links customColors={customColorslinks} to={"/home"}>
+        <S.Links customColors={customColorslinks} to={"/perfil"}>
           {myPerfil}
         </S.Links>
       </S.DivLinksNavigation>

@@ -3,24 +3,38 @@ import userIcon from "../../assets/userIcon.svg"
 import cupomIcon from "../../assets/cupomIcon.svg" 
 import diamondIcon from "../../assets/userIcon.svg" 
 import logoutIcon from "../../assets/logout-box-lineIcon.svg"
+import { useState } from "react"
 
+type OnChangeType = (value: string) => void;
+type props = {
+  onChange: OnChangeType
+}
 
-const ProfileMenu = () =>{
+const ProfileMenu = ({ onChange}:props) =>{
+
+    const [selected, setSelected] = useState('')
+
+    const handleButtonClick = (selected:string) => {
+
+        onChange(selected); 
+      };
+    
+
     return(
         <S.ContainerMenu>
-            <S.ButtonMenu>
+            <S.ButtonMenu onClick={() => handleButtonClick('profile')}>
                 <S.ImageContainer><img src={userIcon} alt="" /></S.ImageContainer>
                 <h4>Meus Dados</h4>
             </S.ButtonMenu>
-            <S.ButtonMenu className="border">
+            <S.ButtonMenu className="border" onClick={() => handleButtonClick('resgates')}>
             <S.ImageContainer><img src={cupomIcon} alt="" /></S.ImageContainer>
             <h4 >Meus Resgates</h4>
             </S.ButtonMenu>
-            <S.ButtonMenu className="border">
+            <S.ButtonMenu className="border" onClick={() => handleButtonClick('joias')}>
             <S.ImageContainer><img src={diamondIcon} alt="" /></S.ImageContainer>
             <h4 >Minhas jóias</h4>
             </S.ButtonMenu >
-            <S.ButtonMenu className="border">
+            <S.ButtonMenu className="border" onClick={() => handleButtonClick('sair')}>
             <S.ImageContainer><img src={logoutIcon} alt="" /></S.ImageContainer>
             <h4 >Sair</h4>
             </S.ButtonMenu>
