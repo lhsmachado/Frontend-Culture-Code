@@ -1,5 +1,6 @@
 import ButtonProps from "../Button/Button";
 import CardMyBalance from "../CardMyBalance/CardMyBalance";
+import {useNavigate } from "react-router-dom";
 
 import ImgPersonagem from "../../assets/Group8.png";
 import ImgPhone from "../../assets/headset.png";
@@ -7,8 +8,11 @@ import * as S from "./CardSuccessfullyRescued.Styled";
 import CardSmallProductsSuccess from "../CardSmallProductsSuccess/CardSmallProductsSuccess";
 
 const CardSuccessfullyRescued = () => {
+  const navigate = useNavigate();
+
+  
   const handleFake = () => {
-    console.log("estou esperando funcionar");
+    navigate("/home");
   };
   return (
     <S.Container>

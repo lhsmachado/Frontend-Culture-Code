@@ -21,7 +21,13 @@ const Products = () => {
       </S.DivNavigate>
 
       {cards === "rescued" ? (
-        <CardSuccessfullyRescued />
+        <S.DivAnimate
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <CardSuccessfullyRescued />
+        </S.DivAnimate>
       ) : (
         <CardProductsRedeems onClick={cardRestadado} />
       )}
