@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const DivNavigate = styled.div`
@@ -5,3 +6,8 @@ export const DivNavigate = styled.div`
     display: none;
   }
 `;
+
+export const DivAnimate = styled(motion.div)`
+
+
+`

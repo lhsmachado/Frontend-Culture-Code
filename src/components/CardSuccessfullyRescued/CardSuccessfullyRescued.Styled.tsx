@@ -106,7 +106,7 @@ export const TextDescription = styled.p`
 
 export const DivButton = styled.div`
   width: 40%;
-  margin-top: 25%;
+  margin-top: 15%;
 
   @media screen and (max-width: 1368px) {
     margin-top: 20%;
