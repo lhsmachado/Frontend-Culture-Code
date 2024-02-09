@@ -16,6 +16,7 @@ interface IButton {
   
   
   isOpen?: boolean;
+  type?: "button" | "submit" | "reset" | undefined;
   onClick?: () => void;
 
 }
@@ -34,7 +35,8 @@ const ButtonProps = ({
   customBorderRadius,
   customBackgroundHover,
   onClick,
-  isOpen
+  isOpen,
+  type
 }: IButton) => {
   if (isOpen) {
     return (
@@ -51,8 +53,9 @@ const ButtonProps = ({
           customFontFamily={customFontFamily}
           customBackgroundHover={customBackgroundHover}
           customBorderRadius={customBorderRadius}
-          
           onClick={onClick}
+          type={type}
+          
         >
           {name}
         </S.Button>
