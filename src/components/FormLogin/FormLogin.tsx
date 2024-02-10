@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form";
 import { loginSchema } from "../../schemas/schameogin";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ButtonProps from "../Button/Button";
-import { ILoginUser, loginUser} from "../../services/auth/loginUser";
+import { ILoginUser, loginUser } from "../../services/auth/loginUser";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 
 const FormLogin = () => {
- 
   const navigate = useNavigate();
 
   const {
@@ -21,13 +20,12 @@ const FormLogin = () => {
   const mutation = useMutation({
     mutationFn: loginUser,
     onSuccess: async () => {
-  
       reset();
       navigate("/home");
     },
-    onError: async () =>{
+    onError: async () => {
       alert("Você não está autorizado a entrar. Verifique suas credenciais.");
-    }
+    },
   });
 
   const onSubmit = (data: ILoginUser) => {
