@@ -15,8 +15,6 @@ export const SecurityToken = ({ children }: ISecurityToken) => {
     const storedToken = localStorage.getItem("access_token");
     if (storedToken || token) {
       setAthentic(true);
-
-      console.log("estou aqui toke porra", token);
     } else {
       navigate("/");
       alert("Por favor realize o login novamente");
