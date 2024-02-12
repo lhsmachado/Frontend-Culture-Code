@@ -1,5 +1,5 @@
 import { ReactNode, useContext, useEffect, useState } from "react";
-import { TokenContext } from "../../context/userContext";
+import { TokenContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 
 interface ISecurityToken {
