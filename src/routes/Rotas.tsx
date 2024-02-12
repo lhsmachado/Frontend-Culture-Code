@@ -3,7 +3,7 @@ import Login from "../pages/Login/Login";
 import Home from "../pages/Home/Home";
 
 import Products from "../pages/Products/Products";
-import { SecurityToken } from "../services/auth/SecurityToken";
+import { SecurityToken } from "../provider/SecurityToken";
 
 const Rotas = () => {
   return (
