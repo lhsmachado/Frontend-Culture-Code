@@ -19,7 +19,7 @@ const Rotas = () => {
           }
         />
         <Route
-          path="/produtos"
+          path="/produtos/:id"
           element={
             <SecurityToken>
               <Products />

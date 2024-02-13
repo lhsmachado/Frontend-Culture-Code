@@ -2,20 +2,15 @@ import * as S from "./CardProductStyled";
 import ButtonProps from "../Button/Button";
 import Imgheart from "../../assets/heart-line.svg";
 
-
-
-
-
 interface ICardProductType {
   image: string;
   title: string;
   gems: number;
+  onClick: () => void;
 }
 
-const CardProduct = ({ image, title, gems }: ICardProductType) => {
-  function handleClick() {
-    return console.log("resgatou");
-  }
+const CardProduct = ({ image, title, gems , onClick }: ICardProductType) => {
+ 
   return (
     <S.Container>
       <S.DivImg>
@@ -40,7 +35,7 @@ const CardProduct = ({ image, title, gems }: ICardProductType) => {
             customPadding=""
             customWidth="100%"
             customBackgroundHover="#d4a3f6"
-            onClick={handleClick}
+            onClick={onClick}
             isOpen={true}
           />
         </S.DivButtonProps>

@@ -6,8 +6,26 @@ import Navigation from "../../components/Navigation/Navigation";
 import Search from "../../components/Search/Search";
 import MediumBanner from "../../components/MediumBanner/MediumBanner";
 import CardProduct from "../../components/cardProduct/cardProduct";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "../../services/getProducts/getProducts";
+import { IGetProducts } from "../../types/getProducts/getProducts";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Home = () => {
+  const navigation = useNavigate();
+  // const { id } = useParams();
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["getProducts"],
+    queryFn: getProducts,
+  });
+  console.log("produtos", data);
+
+  function handleClick(id: string) {
+    navigation(`/produtos/${id}`);
+  }
+  
+
   return (
     <>
       <FullBanner>
@@ -33,54 +51,21 @@ const Home = () => {
         <S.TitleResponsive>Para você</S.TitleResponsive>
         <S.LinkviewProducts to={"/"}>{`Ver tudo >`} </S.LinkviewProducts>
       </S.DivTitleResponsive>
-
-      <S.DivCardProducts>
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-        <CardProduct
-          image={ImgProducts}
-          title="Headphone WB20BT Bluetooth"
-          gems={50}
-        />
-      </S.DivCardProducts>
+      {isLoading ? (
+        <p>Carregando...</p>
+      ) : (
+        <S.DivCardProducts>
+          {data?.data.map((item: IGetProducts) => (
+            <CardProduct
+              key={item.id}
+              image={ImgProducts}
+              title={item.name}
+              gems={50}
+              onClick={() => handleClick(item.id)}
+            />
+          ))}
+        </S.DivCardProducts>
+      )}
     </>
   );
 };
