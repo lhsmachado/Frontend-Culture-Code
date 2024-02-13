@@ -14,6 +14,7 @@ const CardPerfil = ({ customColors, custonColorsStrong }: ICardPerfil) => {
     queryKey: ["getUser"],
     queryFn: getUser,
   });
+  console.log('getUser porra',data);
 
   return (
     <S.Container>
