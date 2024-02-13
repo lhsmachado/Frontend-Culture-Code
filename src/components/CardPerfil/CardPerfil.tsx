@@ -12,7 +12,7 @@ interface ICardPerfil {
 const CardPerfil = ({ customColors, custonColorsStrong }: ICardPerfil) => {
   const { data } = useQuery({
     queryKey: ["getUser"],
-    queryFn: () => getUser(),
+    queryFn: getUser,
   });
 
   return (
