@@ -1,14 +1,23 @@
 import * as S from "../CardProductsRedeems/CardProductsRedeems.Styled";
 import ButtonProps from "../Button/Button";
 import ImgPhone from "../../assets/headset.png";
+import ImgLeft from "../../assets/left-small.png";
 import CardRedeemFor from "../CardRedeemFor/CardRedeemFor";
+import CardMyBalance from "../CardMyBalance/CardMyBalance";
 
-const CardProductsRedeems = () => {
-  const handleFake = () => {
-    console.log("estou esperando funcionar");
-  };
+interface ICardProductsRedeems {
+  onClick: () => void;
+} 
+
+
+
+const CardProductsRedeems = ({onClick}:ICardProductsRedeems) => {
+  
   return (
     <S.Container>
+      <S.DivMyBalance>
+        <CardMyBalance imagem={ImgLeft} number="8"/>
+      </S.DivMyBalance>
       <S.DivImage>
         <S.Image src={ImgPhone} />
       </S.DivImage>
@@ -26,13 +35,12 @@ const CardProductsRedeems = () => {
             com total conforto e equilíbrio que um Over-Ear pode lhe oferecer.
             Experimente áudio de altíssima qualidade, garantida por meio de uma
             conexão sem fio com sinal firme e estável, otimizada pela tecnologia
-            CSR adicionada ao Bluetooth 4.1
-            O Fone de ouvido Headphone Bluetooth Edifier W820BT 80 Horas é um
-            fone completo que oferece um áudio preciso em seus agudos e graves,
-            com total conforto e equilíbrio que um Over-Ear pode lhe oferecer.
-            Experimente áudio de altíssima qualidade, garantida por meio de uma
-            conexão sem fio com sinal firme e estável, otimizada pela tecnologia
-            CSR adicionada ao Bluetooth 4.1
+            CSR adicionada ao Bluetooth 4.1 O Fone de ouvido Headphone Bluetooth
+            Edifier W820BT 80 Horas é um fone completo que oferece um áudio
+            preciso em seus agudos e graves, com total conforto e equilíbrio que
+            um Over-Ear pode lhe oferecer. Experimente áudio de altíssima
+            qualidade, garantida por meio de uma conexão sem fio com sinal firme
+            e estável, otimizada pela tecnologia CSR adicionada ao Bluetooth 4.1
           </S.TextDescription>
         </S.DivTextDescription>
 
@@ -45,11 +53,12 @@ const CardProductsRedeems = () => {
             customFontFamily="Sora"
             customFontWeight="700"
             customFontsize="1.5rem"
+            customBorder="none"
             customBorderRadius="16px"
             customPadding=""
             customBackground=" #502B6B"
             customBackgroundHover="#60357e"
-            onClick={handleFake}
+            onClick={onClick}
             isOpen={true}
           />
         </S.DivButton>

@@ -1,6 +1,6 @@
 import * as S from "../Navigation/Navigation.Styled";
 import CardPerfil from "../CardPerfil/CardPerfil";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 interface INavigation {
   home: string;
@@ -16,14 +16,16 @@ const Navigation = ({
   customColorslinks,
 }: INavigation) => {
   const location = useLocation();
+  const { id } = useParams();
 
-  let customColors = "#ffff";
-  if (location.pathname === "/produtos") {
+  let customColors = "#ffffff";
+  if (location.pathname.startsWith("/produtos") && id) {
     customColors = "#c5b2dc";
   }
 
   let customColorsStrong = "#ffff";
   if (location.pathname === "/produtos" || location.pathname === "/perfil") {
+
     customColorsStrong = "#8638e5";
   }
 

@@ -12,9 +12,9 @@ export const Container = styled.div`
 
 export const DivMyBalance = styled.div`
   margin: 5% 0 0 0;
+  
 
   @media screen and (min-width: 728px) {
-    display: none;
   }
 `;
 export const DivImage = styled.div`
@@ -29,7 +29,7 @@ export const DivImage = styled.div`
 export const Image = styled.img`
   width: 89%;
   @media screen and (max-width: 728px) {
-    width: 50%;
+    width: 80%;
   }
 `;
 export const DivDescription = styled.div`
@@ -41,6 +41,19 @@ export const DivDescription = styled.div`
 
   @media screen and (max-width: 728px) {
     width: 100%;
+  }
+`;
+export const DivTitleProduct = styled.div`
+  @media screen and (max-width: 728px) {
+    align-items: center;
+    text-align: center;
+  }
+`;
+
+export const DivCardSmallProductsSuccess = styled.div`
+  margin: 5% 0 5% 0;
+
+  @media screen and (max-width: 728px) {
   }
 `;
 
@@ -71,7 +84,10 @@ export const DivTextDescription = styled.div`
   width: 100%;
 
   @media screen and (max-width: 728px) {
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -90,7 +106,7 @@ export const TextDescription = styled.p`
 
 export const DivButton = styled.div`
   width: 40%;
-  margin-top: 25%;
+  margin-top: 15%;
 
   @media screen and (max-width: 1368px) {
     margin-top: 20%;

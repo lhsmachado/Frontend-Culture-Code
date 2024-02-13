@@ -1,5 +1,8 @@
 import * as S from "../CardPerfil/CardPerfil.Styled";
 import ImgUser from "../../assets/imguser.png";
+import { getUser } from "../../services/getUser/getUser";
+import { useQuery } from "@tanstack/react-query";
+
 
 interface ICardPerfil {
   customColors: string;
@@ -7,6 +10,11 @@ interface ICardPerfil {
 }
 
 const CardPerfil = ({ customColors, custonColorsStrong }: ICardPerfil) => {
+  const { data } = useQuery({
+    queryKey: ["getUser"],
+    queryFn: getUser,
+  });
+
   return (
     <S.Container>
       <div>
@@ -16,7 +24,7 @@ const CardPerfil = ({ customColors, custonColorsStrong }: ICardPerfil) => {
         <S.TitleNameUser customColors={customColors}>
           Olá,{" "}
           <S.TitleNameStrong customColors={custonColorsStrong}>
-            Alex
+            {data?.firstName}
           </S.TitleNameStrong>
         </S.TitleNameUser>
       </div>

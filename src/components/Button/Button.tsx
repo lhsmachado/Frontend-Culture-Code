@@ -10,11 +10,13 @@ interface IButton {
   customWidth: string;
   customBackground: string;
   customFontFamily: string;
+  customBorder: string
   customBorderRadius: string;
   customBackgroundHover:string;
   
   
   isOpen?: boolean;
+  type?: "button" | "submit" | "reset" | undefined;
   onClick?: () => void;
 
 }
@@ -29,10 +31,12 @@ const ButtonProps = ({
   customWidth,
   customBackground,
   customFontFamily,
+  customBorder,
   customBorderRadius,
   customBackgroundHover,
   onClick,
-  isOpen
+  isOpen,
+  type
 }: IButton) => {
   if (isOpen) {
     return (
@@ -45,11 +49,13 @@ const ButtonProps = ({
           customHeight={customHeight}
           customPadding={customPadding}
           customWidth={customWidth}
+          customBorder={customBorder}
           customFontFamily={customFontFamily}
           customBackgroundHover={customBackgroundHover}
           customBorderRadius={customBorderRadius}
-          
           onClick={onClick}
+          type={type}
+          
         >
           {name}
         </S.Button>
