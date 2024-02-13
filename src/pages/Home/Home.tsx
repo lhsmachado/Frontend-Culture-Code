@@ -9,11 +9,10 @@ import CardProduct from "../../components/cardProduct/cardProduct";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../services/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigation = useNavigate();
-  // const { id } = useParams();
 
   const { data, isLoading } = useQuery({
     queryKey: ["getProducts"],
@@ -24,7 +23,6 @@ const Home = () => {
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
   }
-  
 
   return (
     <>
