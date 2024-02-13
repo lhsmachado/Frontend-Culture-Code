@@ -9,6 +9,12 @@ export const Container = styled.div `
     padding-left: 4rem;
     padding-top: 3.75rem;
     padding-bottom: 3.75rem;
+
+    @media screen and (max-width: 728px) {
+
+        border-radius: 3rem 3rem 0 0;
+        padding-left: 1rem;
+}
 `
 export const Title = styled.h2`
     font-weight: bold;

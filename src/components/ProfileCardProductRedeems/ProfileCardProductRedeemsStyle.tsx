@@ -9,6 +9,12 @@ export const Container = styled.div `
     padding-left: 4rem;
     padding-top: 3.75rem;
     padding-bottom: 3.75rem;
+
+    @media screen and (max-width: 728px) {
+
+        border-radius: 3rem 3rem 0 0;
+        padding-left: 1rem;
+  }
 `
 
 export const Title = styled.h2`
@@ -30,6 +36,7 @@ export const RedeemDate = styled.h3`
     font-family: Sora;
     font-size: 16px;
     color: #757575;
+    margin-top: 1rem;
 `
 
 export const ProductCard = styled.div `
@@ -37,10 +44,19 @@ export const ProductCard = styled.div `
     flex-direction: column;
     width: 18.875rem;
     max-height: 20rem;
+    @media screen and (max-width: 728px) {
+        flex-direction: row;
+}
 `
 export const ProductImage = styled.img`
     width: 16rem;
     height: 11rem;
+
+    @media screen and (max-width: 728px) {
+        flex-direction: row;
+        width: 7rem;
+        height: 7rem;
+}
 `
 
 export const ProductName = styled.h3`

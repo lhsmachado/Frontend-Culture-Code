@@ -18,6 +18,7 @@ export const ButtonMenu = styled.div`
     padding: 1rem;
 
     h4{
+        font-family: Sora;
         font-size: 1rem;
         color: #616161;
         margin-left: 2rem;

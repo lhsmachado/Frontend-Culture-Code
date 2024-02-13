@@ -4,14 +4,16 @@ import ProfileCardJewels from "../../components/ProfileCardJewels/ProfileCardJew
 import ProfileCardProductRedeems from "../../components/ProfileCardProductRedeems/ProfileCardProductRedeems"
 import ProfileCard from "../../components/ProfileCardUser/ProfileCardUser"
 import ProfileMenu from "../../components/ProfileMenu/ProfileMenu"
+import userImg from "../../assets/imguser.png"
+import returnArrow from "../../assets/arrowLeft.svg"
 import * as S from "./PerfilStyle"
 
 const Perfil = () => {
     const [selecteCard, setSelectCard] = useState('')
-    
+    const screen = window.innerWidth
+    console.log(screen)
     const handleChange = (value:string) =>{
         setSelectCard(value)
-        console.log(value)
     }
 
     const cardToRender = () => {
@@ -25,11 +27,24 @@ const Perfil = () => {
             case '':
                 return(<></>)
         }
-
     }
 
-    return(
-        <S.ContainerPage>
+    const cardToRenderMobile = () => {
+        switch(selecteCard){
+            case 'profile':
+                return(<ProfileCard /> );
+            case 'resgates':
+                return(<ProfileCardProductRedeems />);
+            case 'joias':
+                return(<ProfileCardJewels />);
+            case '':
+                return(<ProfileMenu onChange={handleChange}/>)
+        }
+    }
+
+    return(<>
+            {screen > 720 ? <S.ContainerPage>
+            
             <div>
             <Navigation 
             customColorslinks="#000000"
@@ -44,6 +59,32 @@ const Perfil = () => {
             </S.ContainerBody>
             
         </S.ContainerPage>
+           : <>
+           <S.ContainerPage>
+            {
+                selecteCard == '' ?
+                <S.PictureContainer>
+                    <S.ProfilePicture src={userImg}/>
+                    <S.ProfileName>Alex</S.ProfileName>
+                </S.PictureContainer>
+                : <S.ReturnBar>
+                    <S.ReturnArrow src={returnArrow} onClick={() => setSelectCard('')}/>
+                    <S.HeaderText>Meu Perfil</S.HeaderText>
+                    <div></div>
+                </S.ReturnBar>
+            }
+            
+            <S.ContainerBody>
+                
+                {cardToRenderMobile()}
+
+            </S.ContainerBody>
+            
+        </S.ContainerPage>
+           </>}
+       
+    </>
+        
     )
 }
 
