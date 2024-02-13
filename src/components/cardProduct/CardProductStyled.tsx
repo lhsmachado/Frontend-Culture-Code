@@ -41,9 +41,9 @@ export const Image = styled.img`
 `;
 
 export const DivTitleButton = styled.div`
-
-width: 300px;
-
+  @media screen and (max-width: 728px) {
+    width: 300px;
+  }
 `;
 
 export const DivImgheart = styled.div`
@@ -52,8 +52,6 @@ export const DivImgheart = styled.div`
     justify-content: center;
     align-items: center;
     width: 65px;
-    
-    
   }
 `;
 
@@ -90,5 +88,6 @@ export const DivButtonProps = styled.div`
   @media screen and (max-width: 728px) {
     width: 50%;
     margin: 5% 0 0 0;
+    background: red;
   }
 `;
