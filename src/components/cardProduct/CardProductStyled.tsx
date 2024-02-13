@@ -40,14 +40,18 @@ export const Image = styled.img`
   }
 `;
 
-export const DivTitleButton = styled.div``;
+export const DivTitleButton = styled.div`
+  @media screen and (max-width: 728px) {
+    width: 300px;
+  }
+`;
 
 export const DivImgheart = styled.div`
   @media screen and (max-width: 728px) {
     display: flex;
+    justify-content: center;
     align-items: center;
-
-    width: 15%;
+    width: 65px;
   }
 `;
 
@@ -82,7 +86,8 @@ export const DivButtonProps = styled.div`
   width: 100%;
 
   @media screen and (max-width: 728px) {
-    width: 60%;
+    width: 50%;
     margin: 5% 0 0 0;
+    background: red;
   }
 `;

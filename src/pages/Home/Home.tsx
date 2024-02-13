@@ -18,7 +18,7 @@ const Home = () => {
     queryKey: ["getProducts"],
     queryFn: getProducts,
   });
-  console.log("produtos", data);
+  
 
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
