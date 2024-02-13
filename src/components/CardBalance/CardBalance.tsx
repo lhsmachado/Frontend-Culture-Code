@@ -2,13 +2,16 @@ import * as S from "../CardBalance/CardBalance.Styled";
 import Jewelry from "../Jewelry/Jewelry";
 
 import ImgCalendar from "../../assets/calendar-line.svg";
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "../../services/getUser/getUser";
 
 const CardBalance = () => {
+  const { data } = useQuery({ queryKey: ["getUser"], queryFn: getUser });
   return (
     <S.Container>
       <div>
         <S.TitleBalance>Meu saldo</S.TitleBalance>
-        <S.TitleBalanceNumber>08</S.TitleBalanceNumber>
+        <S.TitleBalanceNumber>{data?.credits}</S.TitleBalanceNumber>
       </div>
       <div>
         <S.TitleJewelry>jóias</S.TitleJewelry>
