@@ -3,7 +3,6 @@ import userIcon from "../../assets/userIcon.svg"
 import cupomIcon from "../../assets/cupomIcon.svg" 
 import diamondIcon from "../../assets/userIcon.svg" 
 import logoutIcon from "../../assets/logout-box-lineIcon.svg"
-import { useState } from "react"
 
 type OnChangeType = (value: string) => void;
 type props = {
@@ -11,8 +10,6 @@ type props = {
 }
 
 const ProfileMenu = ({ onChange}:props) =>{
-
-    const [selected, setSelected] = useState('')
 
     const handleButtonClick = (selected:string) => {
 
