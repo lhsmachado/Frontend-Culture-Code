@@ -36,7 +36,7 @@ export const TextBalance = styled.h4`
   color: #212121;
 `;
 
-export const Number = styled.h4`
+export const Balance = styled.h4`
   font-family: Sora;
   font-size: 1.5rem;
   font-style: normal;
