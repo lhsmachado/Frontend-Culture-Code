@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 interface ICardMyBalance {
   imagem: string;
-  number: string;
+  balance: number | undefined;
 }
 
-const CardMyBalance = ({ imagem , number }: ICardMyBalance) => {
+const CardMyBalance = ({ imagem , balance }: ICardMyBalance) => {
   return (
     <S.Container>
       <S.DivLink>
@@ -19,7 +19,7 @@ const CardMyBalance = ({ imagem , number }: ICardMyBalance) => {
       <S.DivBalance>
         <S.TextBalance>Meu saldo:</S.TextBalance>
 
-        <S.Number>{number}</S.Number>
+        <S.Balance>{balance}</S.Balance>
         <img src={ImdDiamont} alt="imagem" />
       </S.DivBalance>
     </S.Container>

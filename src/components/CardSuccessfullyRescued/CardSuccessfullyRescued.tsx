@@ -38,7 +38,7 @@ const CardSuccessfullyRescued = () => {
         </S.DivTextDescription>
 
         <S.DivMyBalance>
-          <CardMyBalance imagem="" number="8" />
+          <CardMyBalance imagem="" balance={50} />
         </S.DivMyBalance>
 
         <S.DivButton>

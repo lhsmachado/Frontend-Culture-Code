@@ -18,7 +18,6 @@ const Home = () => {
     queryKey: ["getProducts"],
     queryFn: getProducts,
   });
-  
 
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
@@ -58,7 +57,7 @@ const Home = () => {
               key={item.id}
               image={ImgProducts}
               title={item.name}
-              gems={50}
+              gems={item.price}
               onClick={() => handleClick(item.id)}
             />
           ))}

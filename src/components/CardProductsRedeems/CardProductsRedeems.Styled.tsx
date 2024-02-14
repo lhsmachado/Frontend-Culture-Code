@@ -1,5 +1,20 @@
 import styled from "styled-components";
 
+export const TitleLoading = styled.h1`
+  align-items: center;
+  text-align: center;
+  font-family: Sora;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  color: #212121;
+  @media screen and (max-width: 728px) {
+    padding: 5px 5px;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
