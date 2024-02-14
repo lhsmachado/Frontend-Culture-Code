@@ -19,7 +19,7 @@ const CardSmallProductsSuccess = ({
           <S.Title>{titleProduct}</S.Title>
         </S.DivTitle>
         <div>
-          <CardRedeemFor />
+          <CardRedeemFor price={50} />
         </div>
       </div>
     </S.Container>
