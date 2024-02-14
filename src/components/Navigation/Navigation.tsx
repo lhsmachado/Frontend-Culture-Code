@@ -24,7 +24,12 @@ const Navigation = ({
   }
 
   let customColorsStrong = "#ffff";
-  if (location.pathname === "/produtos" || location.pathname === "/perfil") {
+
+  if (location.pathname.startsWith("/produtos") && id) {
+    customColorsStrong = "#8638e5";
+  }
+  
+  if (location.pathname === "/perfil") {
 
     customColorsStrong = "#8638e5";
   }
