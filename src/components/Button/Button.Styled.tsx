@@ -12,6 +12,10 @@ interface IButtonProps {
   customFontFamily: string;
   customBorderRadius: string;
   customBackgroundHover: string;
+
+  customBackgroundResponsive?: string;
+  customColorResponsive?: string;
+  customHouverBackgroundResponsive?: string;
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -34,10 +38,18 @@ export const Button = styled.button<IButtonProps>`
   }
 
   @media screen and (max-width: 768px) {
-    background: #502b6b;
-    color: rgba(255, 255, 255, 1);
+    background:${(props) => props.customBackgroundResponsive};
+    color:${(props) => props.customColorResponsive};
     &:hover {
-      background: #5d3579;
+      background: ${(props) => props.customHouverBackgroundResponsive};
     }
   }
 `;
+
+// @media screen and (max-width: 768px) {
+//   background: #502b6b;
+//   color: rgba(255, 255, 255, 1);
+//   &:hover {
+//     background: #5d3579;
+//   }
+// }

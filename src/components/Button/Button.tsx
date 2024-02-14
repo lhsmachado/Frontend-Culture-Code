@@ -13,6 +13,10 @@ interface IButton {
   customBorder: string
   customBorderRadius: string;
   customBackgroundHover:string;
+
+  customBackgroundResponsive?: string;
+  customColorResponsive?: string;
+  customHouverBackgroundResponsive?: string;
   
   
   isOpen?: boolean;
@@ -34,6 +38,9 @@ const ButtonProps = ({
   customBorder,
   customBorderRadius,
   customBackgroundHover,
+  customBackgroundResponsive,
+  customColorResponsive,
+  customHouverBackgroundResponsive,
   onClick,
   isOpen,
   type
@@ -53,6 +60,9 @@ const ButtonProps = ({
           customFontFamily={customFontFamily}
           customBackgroundHover={customBackgroundHover}
           customBorderRadius={customBorderRadius}
+          customColorResponsive={customColorResponsive}
+          customBackgroundResponsive={customBackgroundResponsive}
+          customHouverBackgroundResponsive={customHouverBackgroundResponsive}
           onClick={onClick}
           type={type}
           
