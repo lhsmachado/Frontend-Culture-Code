@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 interface ICardMyBalance {
   imagem: string;
-  number: string;
+  number: number | undefined;
 }
 
 const CardMyBalance = ({ imagem , number }: ICardMyBalance) => {
