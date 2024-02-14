@@ -9,8 +9,9 @@ interface ICardProductType {
   onClick: () => void;
 }
 
-const CardProduct = ({ image, title, gems , onClick }: ICardProductType) => {
- 
+const CardProduct = ({ image, title, gems, onClick }: ICardProductType) => {
+  const limitTitle = 40;
+
   return (
     <S.Container>
       <S.DivImg>
@@ -18,7 +19,11 @@ const CardProduct = ({ image, title, gems , onClick }: ICardProductType) => {
       </S.DivImg>
       <S.DivTitleButton>
         <S.DivTitle>
-          <S.Title>{title}</S.Title>
+          <S.Title>
+            {title.length <= limitTitle
+              ? title
+              : `${title.slice(0, limitTitle)}...`}
+          </S.Title>
           <S.SubTitle>{gems} jóias</S.SubTitle>
         </S.DivTitle>
         <S.DivButtonProps>
@@ -34,7 +39,7 @@ const CardProduct = ({ image, title, gems , onClick }: ICardProductType) => {
             customBorder="none"
             customPadding=""
             customWidth="100%"
-            customBackgroundHover="#d4a3f6"
+            customBackgroundHover="#643883"
             onClick={onClick}
             isOpen={true}
           />
