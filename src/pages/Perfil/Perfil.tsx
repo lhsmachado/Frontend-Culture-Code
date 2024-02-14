@@ -7,6 +7,7 @@ import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
 import userImg from "../../assets/imguser.png";
 import returnArrow from "../../assets/arrowLeft.svg";
 import * as S from "./PerfilStyle";
+import ProfileCardChangePassword from "../../components/ProfileCardChangePassword/ProfileCardChangePassword";
 
 const Perfil = () => {
   const [selecteCard, setSelectCard] = useState("");
@@ -24,6 +25,8 @@ const Perfil = () => {
         return <ProfileCardProductRedeems />;
       case "joias":
         return <ProfileCardJewels />;
+      case "senha":
+        return <ProfileCardChangePassword />;
       case "":
         return <></>;
     }
@@ -37,6 +40,8 @@ const Perfil = () => {
         return <ProfileCardProductRedeems />;
       case "joias":
         return <ProfileCardJewels />;
+        case "senha":
+        return <ProfileCardChangePassword />;
       case "":
         return <ProfileMenu onChange={handleChange} />;
     }
