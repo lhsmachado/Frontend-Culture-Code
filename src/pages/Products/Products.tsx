@@ -3,14 +3,37 @@ import CardProductsRedeems from "../../components/CardProductsRedeems/CardProduc
 import Navigation from "../../components/Navigation/Navigation";
 import CardSuccessfullyRescued from "../../components/CardSuccessfullyRescued/CardSuccessfullyRescued";
 import { useState } from "react";
+import ModalConfirmationRescued from "../../components/ModalConfirmationRescued/ModalConfirmationRescued";
+import { useQuery } from "@tanstack/react-query";
+import { getProductsId } from "../../services/getProducts/getProductsId";
+import { useParams } from "react-router-dom";
 
 const Products = () => {
+  const {id} = useParams()
   const [cards, setCards] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const cardRestadado = () => setCards("rescued");
+  const {data:products}= useQuery({queryKey:["getProductsId"] , queryFn: () => getProductsId(id as string)})
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
+  const cardRestadado = () => {
+    setCards("rescued");
+    closeModal();
+  };
 
   return (
     <>
+      <ModalConfirmationRescued
+        isOpen={modalOpen}
+        price={products?.price}
+        rescued={cardRestadado}
+        closeModal={closeModal}
+        onCloseModal={closeModal}
+        nameProduct={products?.name}
+        
+      />
       <S.DivNavigate>
         <Navigation
           customColorslinks="#000000"
@@ -29,7 +52,7 @@ const Products = () => {
           <CardSuccessfullyRescued />
         </S.DivAnimate>
       ) : (
-        <CardProductsRedeems onClick={cardRestadado} />
+        <CardProductsRedeems onClick={openModal} />
       )}
     </>
   );
