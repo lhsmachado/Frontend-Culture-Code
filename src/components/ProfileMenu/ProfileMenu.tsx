@@ -23,7 +23,7 @@ const ProfileMenu = ({ onChange}:props) =>{
                 <S.ImageContainer><img src={userIcon} alt="" /></S.ImageContainer>
                 <h4>Meus Dados</h4>
             </S.ButtonMenu>
-            <S.ButtonMenu className="border" onClick={() => handleButtonClick('resgates')}>
+            <S.ButtonMenu className="border" onClick={() => handleButtonClick('senha')}>
             <S.ImageContainer><img src={cupomIcon} alt="" /></S.ImageContainer>
             <h4 >Alterar senha</h4>
             </S.ButtonMenu>
