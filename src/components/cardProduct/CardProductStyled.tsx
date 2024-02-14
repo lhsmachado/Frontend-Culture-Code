@@ -18,7 +18,9 @@ export const DivTitle = styled.div`
   flex-direction: column;
   margin: 8% 0 0 0;
   width: 100%;
+  height: 80px;
   gap: 5px;
+  
 `;
 export const DivImg = styled.div`
   width: 100%;
@@ -79,6 +81,7 @@ export const SubTitle = styled.h4`
   line-height: 140%;
   letter-spacing: 0.2px;
   color: #b1afaf;
+  
 `;
 
 export const DivButtonProps = styled.div`
