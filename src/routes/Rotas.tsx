@@ -1,15 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import Home from "../pages/Home/Home";
-
 import Products from "../pages/Products/Products";
+
+import Perfil from "../pages/Perfil/Perfil";
+
 import { SecurityToken } from "../provider/SecurityToken";
+
 
 const Rotas = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
+
         <Route
           path="/home"
           element={
@@ -26,6 +30,7 @@ const Rotas = () => {
             </SecurityToken>
           }
         />
+        <Route path="/perfil" element={<Perfil />} />
       </Routes>
     </BrowserRouter>
   );

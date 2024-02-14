@@ -5,10 +5,16 @@ export const Container = styled.div `
     width: 31rem;
     border-radius: 3rem;
     background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
     padding-left: 4rem;
     padding-top: 3.75rem;
     padding-bottom: 3.75rem;
+
+    @media screen and (max-width: 728px) {
+
+        border-radius: 3rem 3rem 0 0;
+        padding-left: 1rem;
+}
 `
 export const Title = styled.h2`
     font-weight: bold;
