@@ -1,77 +1,32 @@
 import * as S from "./ProfileCardProductRedeemsStyle"
-import product from "../../assets/headset.png"
+import { IProfileRedeemCard } from "../../types/ProfilePage/productRedeems"
 
-const ProfileCardProductRedeems = () =>{
+
+type IProductsRedeems = {
+    data?: IProfileRedeemCard[]
+}
+
+const ProfileCardProductRedeems = ({data}:IProductsRedeems) =>{
     return(
         <S.Container>
             <div>
                 <S.Title>Meus resgates</S.Title>
             </div>
-            <div>
-                <S.RedeemDate>22 de dezembro</S.RedeemDate>
-            </div>
             <S.ProductList>
-                <S.ProductCard>
-                    <div>
-                    <S.ProductImage src={product} />
-                    </div>
-                    <div>   
-                        <S.ProductName > Headphone W820BT Bluetooth over-ear edifier   </S.ProductName >
-                        <S.ProductPrice> 2 jóias </S.ProductPrice>
-                    </div>
-                    
-                </S.ProductCard>
-                <S.ProductCard>
-                    <div>
-                    <S.ProductImage src={product} />
-                    </div>
-                    <div>   
-                        <S.ProductName > Headphone W820BT Bluetooth over-ear edifier   </S.ProductName >
-                        <S.ProductPrice> 2 jóias </S.ProductPrice>
-                    </div>
-                    
-                </S.ProductCard>
-                <S.ProductCard>
-                    <div>
-                    <S.ProductImage src={product} />
-                    </div>
-                    <div>   
-                        <S.ProductName > Headphone W820BT Bluetooth over-ear edifier   </S.ProductName >
-                        <S.ProductPrice> 2 jóias </S.ProductPrice>
-                    </div>
-                    
-                </S.ProductCard>
-                <S.ProductCard>
-                    <div>
-                    <S.ProductImage src={product} />
-                    </div>
-                    <div>   
-                        <S.ProductName > Headphone W820BT Bluetooth over-ear edifier   </S.ProductName >
-                        <S.ProductPrice> 2 jóias </S.ProductPrice>
-                    </div>
-                    
-                </S.ProductCard>
-                <S.ProductCard>
-                    <div>
-                    <S.ProductImage src={product} />
-                    </div>
-                    <div>   
-                        <S.ProductName > Headphone W820BT Bluetooth over-ear edifier   </S.ProductName >
-                        <S.ProductPrice> 2 jóias </S.ProductPrice>
-                    </div>
-                    
-                </S.ProductCard>
-                <S.ProductCard>
-                    <div>
-                    <S.ProductImage src={product} />
-                    </div>
-                    <div>   
-                        <S.ProductName > Headphone W820BT Bluetooth over-ear edifier   </S.ProductName >
-                        <S.ProductPrice> 2 jóias </S.ProductPrice>
-                    </div>
-                    
-                </S.ProductCard>
-                
+                {data? data.map((item:IProfileRedeemCard)=>
+                (
+                    <S.ProductCard>
+                        <div>
+                        <S.ProductImage src={item.image} />
+                        </div>
+                        <div>   
+                            <S.ProductName >{item.name}</S.ProductName >
+                            <S.ProductPrice>{item.price} jóias</S.ProductPrice>
+                        </div>
+                    </S.ProductCard>
+                ))
+            : <></>
+            }
             </S.ProductList>
 
         </S.Container>

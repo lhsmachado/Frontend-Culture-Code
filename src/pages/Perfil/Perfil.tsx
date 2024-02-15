@@ -8,11 +8,15 @@ import userImg from "../../assets/imguser.png";
 import returnArrow from "../../assets/arrowLeft.svg";
 import * as S from "./PerfilStyle";
 import ProfileCardChangePassword from "../../components/ProfileCardChangePassword/ProfileCardChangePassword";
+import { getUser } from "../../services/getUser/getUser";
+import { useQuery } from "@tanstack/react-query";
 
 const Perfil = () => {
   const [selecteCard, setSelectCard] = useState("");
   const screen = window.innerWidth;
-  console.log(screen);
+
+  const { data } = useQuery({ queryKey: ["getUser"], queryFn: getUser });
+
   const handleChange = (value: string) => {
     setSelectCard(value);
   };
@@ -20,11 +24,17 @@ const Perfil = () => {
   const cardToRender = () => {
     switch (selecteCard) {
       case "profile":
-        return <ProfileCard />;
+        return (
+          <ProfileCard
+            image={data?.profileImg}
+            name={data?.firstName + ` ` + data?.lastName}
+            email={data?.email}
+          />
+        );
       case "resgates":
-        return <ProfileCardProductRedeems />;
+        return <ProfileCardProductRedeems data={data?.products} />;
       case "joias":
-        return <ProfileCardJewels />;
+        return <ProfileCardJewels data={data?.jewels} />;
       case "senha":
         return <ProfileCardChangePassword />;
       case "":
@@ -35,12 +45,18 @@ const Perfil = () => {
   const cardToRenderMobile = () => {
     switch (selecteCard) {
       case "profile":
-        return <ProfileCard />;
+        return (
+          <ProfileCard
+            image={data?.profileImg}
+            name={data?.firstName + ` ` + data?.lastName}
+            email={data?.email}
+          />
+        );
       case "resgates":
-        return <ProfileCardProductRedeems />;
+        return <ProfileCardProductRedeems data={data?.products} />;
       case "joias":
-        return <ProfileCardJewels />;
-        case "senha":
+        return <ProfileCardJewels data={data?.jewels} />;
+      case "senha":
         return <ProfileCardChangePassword />;
       case "":
         return <ProfileMenu onChange={handleChange} />;
