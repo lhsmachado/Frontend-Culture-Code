@@ -50,6 +50,8 @@ const Products = () => {
     }
   };
 
+  const response = mutation.data;
+
   return (
     <>
       <ModalConfirmationRescued
@@ -75,7 +77,11 @@ const Products = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <CardSuccessfullyRescued />
+          <CardSuccessfullyRescued
+            nameProduct={products?.name}
+            priceProducts={products?.price}
+            balance={response?.credits}
+          />
         </S.DivAnimate>
       ) : (
         <CardProductsRedeems onClick={openModal} />
