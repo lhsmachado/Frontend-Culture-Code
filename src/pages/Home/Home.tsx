@@ -7,7 +7,7 @@ import Search from "../../components/Search/Search";
 import MediumBanner from "../../components/MediumBanner/MediumBanner";
 import CardProduct from "../../components/cardProduct/cardProduct";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../../services/getProducts/getProducts";
+import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
 import { useNavigate } from "react-router-dom";
 

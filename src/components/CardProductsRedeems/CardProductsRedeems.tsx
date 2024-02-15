@@ -6,7 +6,7 @@ import CardRedeemFor from "../CardRedeemFor/CardRedeemFor";
 import CardMyBalance from "../CardMyBalance/CardMyBalance";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getProductsId } from "../../services/getProducts/getProductsId";
+import { getProductsId } from "../../services/Products/getProducts/getProductsId";
 import { getUser } from "../../services/getUser/getUser";
 
 interface ICardProductsRedeems {

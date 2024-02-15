@@ -70,7 +70,7 @@ const ModalConfirmationRescued = ({
       >
         <S.Title>Quase lá! Confime o resgate da sua recompensa</S.Title>
         <S.Description>
-          Você escolheru a recompensa “{nameProduct}” por:{" "}
+          Você escolheu a recompensa “{nameProduct}” por:{" "}
           <S.TitleBalance>{price}</S.TitleBalance>
           <S.ImgDiamont src={ImgDiamont} alt="" />
         </S.Description>
