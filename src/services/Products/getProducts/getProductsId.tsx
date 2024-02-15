@@ -1,5 +1,5 @@
-import { api } from "../../hooks/axios/api";
-import { IGetProductsId } from "../../types/getProducts/TypesGetProductsId";
+import { api } from "../../../hooks/axios/api";
+import { IGetProductsId } from "../../../types/getProducts/TypesGetProductsId";
 
 export const getProductsId = async (id:string): Promise<IGetProductsId | undefined> => {
   try {

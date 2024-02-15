@@ -1,5 +1,5 @@
-import { api } from "../../hooks/axios/api";
-import { IGetProducts } from "../../types/getProducts/getProducts";
+import { api } from "../../../hooks/axios/api";
+import { IGetProducts } from "../../../types/getProducts/getProducts";
 
 export interface IGetProductsResponse {
     data: IGetProducts[];

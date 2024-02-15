@@ -3,7 +3,6 @@ import ImgUser from "../../assets/imguser.png";
 import { getUser } from "../../services/getUser/getUser";
 import { useQuery } from "@tanstack/react-query";
 
-
 interface ICardPerfil {
   customColors: string;
   custonColorsStrong: string;
@@ -14,7 +13,6 @@ const CardPerfil = ({ customColors, custonColorsStrong }: ICardPerfil) => {
     queryKey: ["getUser"],
     queryFn: getUser,
   });
-  console.log('getUser porra',data);
 
   return (
     <S.Container>
