@@ -9,6 +9,7 @@ import { getProductsId } from "../../services/Products/getProducts/getProductsId
 import { useParams } from "react-router-dom";
 import { getUser } from "../../services/getUser/getUser";
 import { ProductRescued } from "../../services/Products/productrescued/ProductRescued";
+import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 
 const Products = () => {
   const { id } = useParams();
@@ -86,6 +87,7 @@ const Products = () => {
       ) : (
         <CardProductsRedeems onClick={openModal} />
       )}
+      <NavbarMobile />
     </>
   );
 };

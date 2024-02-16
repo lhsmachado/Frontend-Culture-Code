@@ -10,6 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
 import { useNavigate } from "react-router-dom";
+import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 
 const Home = () => {
   const navigation = useNavigate();
@@ -63,6 +64,7 @@ const Home = () => {
           ))}
         </S.DivCardProducts>
       )}
+      <NavbarMobile />
     </>
   );
 };

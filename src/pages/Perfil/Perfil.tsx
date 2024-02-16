@@ -10,6 +10,7 @@ import * as S from "./PerfilStyle";
 import ProfileCardChangePassword from "../../components/ProfileCardChangePassword/ProfileCardChangePassword";
 import { getUser } from "../../services/getUser/getUser";
 import { useQuery } from "@tanstack/react-query";
+import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 
 const Perfil = () => {
   const [selecteCard, setSelectCard] = useState("");
@@ -101,8 +102,10 @@ const Perfil = () => {
 
             <S.ContainerBody>{cardToRenderMobile()}</S.ContainerBody>
           </S.ContainerPage>
+          <NavbarMobile />
         </>
       )}
+      
     </>
   );
 };
