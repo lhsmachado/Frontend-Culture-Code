@@ -6,13 +6,16 @@ export interface IGetProductsResponse {
   }
   
 
-export const getProducts = async (): Promise<IGetProductsResponse | undefined > => {
+export const getProducts = async (query:string | undefined): Promise<IGetProductsResponse | undefined > => {
   try {
     const accessToken = localStorage.getItem("access_token") || "";
     const response = await api.get(`/v1/products`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
+      params:{
+        name: query,
+      }
     });
 
     return response.data ;

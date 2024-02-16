@@ -6,23 +6,33 @@ import Navigation from "../../components/Navigation/Navigation";
 import Search from "../../components/Search/Search";
 import MediumBanner from "../../components/MediumBanner/MediumBanner";
 import CardProduct from "../../components/cardProduct/cardProduct";
+import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
 import { useNavigate } from "react-router-dom";
-import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
+import { useState } from "react";
 
 const Home = () => {
   const navigation = useNavigate();
+  const [search, setSearch] = useState("");
 
   const { data, isLoading } = useQuery({
-    queryKey: ["getProducts"],
-    queryFn: getProducts,
+    queryKey: ["getProducts", search],
+    queryFn: () => getProducts(search),
   });
 
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
   }
+
+  const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    if (event.key === "Enter") {
+      setSearch(event.currentTarget.value);
+    }
+  };
 
   return (
     <>
@@ -36,7 +46,7 @@ const Home = () => {
         <CardBalance />
       </FullBanner>
       <S.DivSearch>
-        <Search />
+        <Search onKeyDown={handleSearch} />
       </S.DivSearch>
       <S.DivMediumBanner>
         <MediumBanner />

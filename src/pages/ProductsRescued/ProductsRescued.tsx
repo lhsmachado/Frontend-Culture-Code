@@ -9,13 +9,15 @@ import { useNavigate } from "react-router-dom";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
 import { getUser } from "../../services/getUser/getUser";
+import { useState } from "react";
 
 const ProductsRescued = () => {
   const navigation = useNavigate();
+  const [search, setSearch] = useState("");
 
   const { data: products, isLoading } = useQuery({
-    queryKey: ["getProducts"],
-    queryFn: getProducts,
+    queryKey: ["getProducts", search],
+    queryFn: () => getProducts(search),
   });
 
   const { data: user, isLoading: loading } = useQuery({
@@ -26,6 +28,13 @@ const ProductsRescued = () => {
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
   }
+  const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    if (event.key === "Enter") {
+      setSearch(event.currentTarget.value);
+    }
+  };
 
   return (
     <div>
@@ -42,7 +51,7 @@ const ProductsRescued = () => {
         <S.Title>Produtos para você resgatar</S.Title>
       </S.DivTitle>
       <S.DivSearch>
-        <Search />
+        <Search onKeyDown={handleSearch} />
       </S.DivSearch>
       <S.DivCardBalance>
         {loading ? (
