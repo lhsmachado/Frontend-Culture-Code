@@ -20,7 +20,7 @@ const Navigation = ({
 
   let customColors = "#ffffff";
   if (location.pathname.startsWith("/produtos") && id) {
-    customColors = "#c5b2dc";
+    customColors = "#967fb1";
   }
 
   let customColorsStrong = "#ffff";
@@ -28,10 +28,15 @@ const Navigation = ({
   if (location.pathname.startsWith("/produtos") && id) {
     customColorsStrong = "#8638e5";
   }
-  
-  if (location.pathname === "/perfil") {
 
+  if (location.pathname === "/produtos") {
     customColorsStrong = "#8638e5";
+    customColors = "#967fb1";
+  }
+
+  if (location.pathname === "/perfil") {
+    customColorsStrong = "#8638e5";
+    customColors = "#967fb1";
   }
 
   return (
