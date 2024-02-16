@@ -1,3 +1,6 @@
+import { IProfileJewel } from "../ProfilePage/jewels";
+import { IProfileRedeemCard } from "../ProfilePage/productRedeems";
+
 export interface IGetUsersTypes {
   id: string;
   firstName: string;
@@ -9,6 +12,6 @@ export interface IGetUsersTypes {
   deletedAt: any;
   updatedAt: string;
   createdAt: string;
-  jewels: any[];
-  products: any[];
+  jewels: IProfileJewel[];
+  products: IProfileRedeemCard[];
 }

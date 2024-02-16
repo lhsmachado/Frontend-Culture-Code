@@ -30,7 +30,13 @@ const Rotas = () => {
             </SecurityToken>
           }
         />
-        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/perfil" element={
+          <SecurityToken>
+            <Perfil />
+          </SecurityToken>
+            
+          
+        } />
       </Routes>
     </BrowserRouter>
   );
