@@ -1,16 +1,25 @@
 import ButtonProps from "../Button/Button";
 import CardMyBalance from "../CardMyBalance/CardMyBalance";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import ImgPersonagem from "../../assets/Group8.png";
 import ImgPhone from "../../assets/headset.png";
 import * as S from "./CardSuccessfullyRescued.Styled";
 import CardSmallProductsSuccess from "../CardSmallProductsSuccess/CardSmallProductsSuccess";
 
-const CardSuccessfullyRescued = () => {
+interface ICardSuccessfullyRescued {
+  nameProduct: string | undefined;
+  balance: number | undefined;
+  priceProducts: number | undefined;
+}
+
+const CardSuccessfullyRescued = ({
+  nameProduct,
+  balance,
+  priceProducts,
+}: ICardSuccessfullyRescued) => {
   const navigate = useNavigate();
 
-  
   const handleFake = () => {
     navigate("/home");
   };
@@ -27,7 +36,8 @@ const CardSuccessfullyRescued = () => {
         <S.DivCardSmallProductsSuccess>
           <CardSmallProductsSuccess
             imagem={ImgPhone}
-            titleProduct="Headphone W820BT Bluetooth over-ear edifier"
+            titleProduct={nameProduct}
+            priceProducts={priceProducts}
           />
         </S.DivCardSmallProductsSuccess>
 
@@ -38,7 +48,7 @@ const CardSuccessfullyRescued = () => {
         </S.DivTextDescription>
 
         <S.DivMyBalance>
-          <CardMyBalance imagem="" balance={50} />
+          <CardMyBalance imagem="" balance={balance} />
         </S.DivMyBalance>
 
         <S.DivButton>

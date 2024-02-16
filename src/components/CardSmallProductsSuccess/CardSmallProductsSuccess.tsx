@@ -2,12 +2,14 @@ import * as S from "./CardSmallProductsSuccess.Styled";
 import CardRedeemFor from "../CardRedeemFor/CardRedeemFor";
 interface ICardSmallProductSuccess {
   imagem: string;
-  titleProduct: string;
+  titleProduct: string | undefined;
+  priceProducts: number | undefined;
 }
 
 const CardSmallProductsSuccess = ({
   imagem,
   titleProduct,
+  priceProducts,
 }: ICardSmallProductSuccess) => {
   return (
     <S.Container>
@@ -19,7 +21,7 @@ const CardSmallProductsSuccess = ({
           <S.Title>{titleProduct}</S.Title>
         </S.DivTitle>
         <div>
-          <CardRedeemFor price={50} />
+          <CardRedeemFor price={priceProducts} />
         </div>
       </div>
     </S.Container>
