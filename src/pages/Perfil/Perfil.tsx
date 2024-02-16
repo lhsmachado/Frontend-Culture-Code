@@ -69,7 +69,7 @@ const Perfil = () => {
         <S.ContainerPage>
           <div>
             <Navigation
-              customColorslinks="#000000"
+              customColorslinks="#292929"
               home="Home"
               produtos="Produtos"
               myPerfil="Meu Perfil"

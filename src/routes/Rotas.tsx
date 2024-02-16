@@ -6,7 +6,7 @@ import Products from "../pages/Products/Products";
 import Perfil from "../pages/Perfil/Perfil";
 
 import { SecurityToken } from "../provider/SecurityToken";
-
+import ProductsRescued from "../pages/ProductsRescued/ProductsRescued";
 
 const Rotas = () => {
   return (
@@ -30,13 +30,23 @@ const Rotas = () => {
             </SecurityToken>
           }
         />
-        <Route path="/perfil" element={
-          <SecurityToken>
-            <Perfil />
-          </SecurityToken>
-            
-          
-        } />
+
+        <Route
+          path="/produtos"
+          element={
+            <SecurityToken>
+              <ProductsRescued/>
+            </SecurityToken>
+          }
+        />
+        <Route
+          path="/perfil"
+          element={
+            <SecurityToken>
+              <Perfil />
+            </SecurityToken>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
