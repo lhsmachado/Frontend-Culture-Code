@@ -1,12 +1,11 @@
-import * as S from "./ProfileCardJewelsStyle"
-import { IProfileJewel } from "../../types/ProfilePage/jewels"
+import * as S from "./ProfileCardJewelsStyle";
+import { IProfileJewel } from "../../types/ProfilePage/jewels";
 
 type IProfileJewels = {
-    data?: IProfileJewel[]
-}
+  data?: IProfileJewel[];
+};
 
-const ProfileCardJewels = ({data}:IProfileJewels) =>{
-    
+const ProfileCardJewels = ({ data }: IProfileJewels) => {
 
     return(
         <S.Container>
@@ -31,10 +30,7 @@ const ProfileCardJewels = ({data}:IProfileJewels) =>{
             : <></>
             }
            </S.JewelsList>
-            
+            </ S.Container>
+    )}
 
-        </S.Container>
-    )
-}
-
-export default ProfileCardJewels
+export default ProfileCardJewels;

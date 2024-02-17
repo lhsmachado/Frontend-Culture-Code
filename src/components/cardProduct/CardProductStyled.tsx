@@ -10,6 +10,7 @@ export const Container = styled.div`
   @media screen and (max-width: 728px) {
     flex-direction: row;
     width: 100%;
+    
   }
 `;
 
@@ -30,6 +31,7 @@ export const DivImg = styled.div`
   @media screen and (max-width: 728px) {
     width: 40%;
     display: flex;
+    margin: 0 0 0 2%;
     align-items: center;
     text-align: center;
   }
@@ -91,6 +93,6 @@ export const DivButtonProps = styled.div`
   @media screen and (max-width: 728px) {
     width: 50%;
     margin: 5% 0 0 0;
-    background: red;
+   
   }
 `;

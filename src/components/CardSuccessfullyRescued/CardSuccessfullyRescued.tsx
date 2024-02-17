@@ -1,22 +1,22 @@
+import * as S from "./CardSuccessfullyRescued.Styled";
 import ButtonProps from "../Button/Button";
 import CardMyBalance from "../CardMyBalance/CardMyBalance";
-import { useNavigate } from "react-router-dom";
-
 import ImgPersonagem from "../../assets/Group8.png";
-import ImgPhone from "../../assets/headset.png";
-import * as S from "./CardSuccessfullyRescued.Styled";
 import CardSmallProductsSuccess from "../CardSmallProductsSuccess/CardSmallProductsSuccess";
+import { useNavigate } from "react-router-dom";
 
 interface ICardSuccessfullyRescued {
   nameProduct: string | undefined;
   balance: number | undefined;
   priceProducts: number | undefined;
+  image: string | undefined;
 }
 
 const CardSuccessfullyRescued = ({
   nameProduct,
   balance,
   priceProducts,
+  image,
 }: ICardSuccessfullyRescued) => {
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ const CardSuccessfullyRescued = ({
 
         <S.DivCardSmallProductsSuccess>
           <CardSmallProductsSuccess
-            imagem={ImgPhone}
+            imagem={image}
             titleProduct={nameProduct}
             priceProducts={priceProducts}
           />

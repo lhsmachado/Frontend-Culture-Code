@@ -11,18 +11,23 @@ import { getUser } from "../../services/getUser/getUser";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
+import ModalPrice from "../../components/ModalPrice/ModalPrice";
 
 const ProductsRescued = () => {
   const navigation = useNavigate();
   const [search, setSearch] = useState("");
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState<number>(1);
+  const [modal, setModal] = useState(false);
+  
+  const [inputValue, setInputValue] = useState(1);
+  const [price, setPrice] = useState<number | undefined>(undefined);
 
   const limit = 8;
 
   const { data: products, isLoading } = useQuery({
     queryKey: ["getProducts", search, page],
-    queryFn: () => getProducts(search, page, limit),
+    queryFn: () => getProducts(search, page, limit , price),
   });
 
   const { data: user, isLoading: loading } = useQuery({
@@ -39,6 +44,7 @@ const ProductsRescued = () => {
       setTotalPages(products.pages);
     }
   }, [page, products]);
+
   const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
     event
   ) => {
@@ -47,8 +53,34 @@ const ProductsRescued = () => {
     }
   };
 
+  const openModal = () => {
+    setModal(true);
+  };
+  const closeModal = () => {
+    setModal(false);
+    setInputValue(1);
+  };
+
+  const handleSliderChange = (event: any) => {
+    const inputValue = parseInt(event.target.value, 10);
+    setInputValue(inputValue);
+  };
+
+  const handleModalButton = () => {
+    setPrice(inputValue);
+    closeModal();
+  };
+  console.log(handleModalButton)
   return (
     <div>
+     <ModalPrice
+        isOpen={modal}
+        onChange={handleSliderChange}
+        onClick={handleModalButton}
+        onCloseModal={closeModal}
+        sliderValue={inputValue}
+      />
+
       <S.DivNavigate>
         <Navigation
           home="Home"
@@ -57,12 +89,13 @@ const ProductsRescued = () => {
           customColorslinks="#292929"
         />
       </S.DivNavigate>
+      
 
       <S.DivTitle>
         <S.Title>Produtos para você resgatar</S.Title>
       </S.DivTitle>
       <S.DivSearch>
-        <Search onKeyDown={handleSearch} />
+        <Search onKeyDown={handleSearch} onClick={openModal}/>
       </S.DivSearch>
       <S.DivCardBalance>
         {loading ? (
@@ -89,17 +122,22 @@ const ProductsRescued = () => {
           ))}
         </S.DivCardProducts>
       )}
-      <Pagination
-        page={page}
-        count={totalPages}
-        color="primary"
-        shape="rounded"
-        onChange={(_, newPage) => setPage(newPage)}
-      />
-      <S.NavbarMobile>
+      <S.DivPagination>
+        {products?.data.length === 0 && (
+          <S.TitleProductsNot>Nenhum produto encontrado.</S.TitleProductsNot>
+        )}
+        <Pagination
+          page={page}
+          count={totalPages}
+          color="secondary"
+          shape="rounded"
+          onChange={(_, newPage) => setPage(newPage)}
+        />
+      </S.DivPagination>
+
+<S.NavbarMobile>
       <NavbarMobile />
       </S.NavbarMobile>
-      
     </div>
   );
 };
