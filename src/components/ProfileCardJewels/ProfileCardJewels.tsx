@@ -18,12 +18,12 @@ const ProfileCardJewels = ({data}:IProfileJewels) =>{
                 (
                     <S.JewelsContainer>
                     <div>
-                        <img src={item.image} alt="" />
+                        <S.JewelPic src={item.image} alt="" />
                     </div>
                     
                     <S.JewelsTexts>
                         <S.JewelTitle> {item.type}</S.JewelTitle>
-                        <S.JewelQtd>{item.count} jóias</S.JewelQtd>
+                        <S.JewelQtd>{item.count} {Number(item.count) > 1 ?"jóias" : "jóia"}</S.JewelQtd>
                         <S.JewelDetails>{item.habilities}</S.JewelDetails>
                     </S.JewelsTexts>
                 </S.JewelsContainer> 

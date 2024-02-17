@@ -10,6 +10,7 @@ import { IGetProducts } from "../../types/getProducts/getProducts";
 import { getUser } from "../../services/getUser/getUser";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
+import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 
 const ProductsRescued = () => {
   const navigation = useNavigate();
@@ -95,6 +96,10 @@ const ProductsRescued = () => {
         shape="rounded"
         onChange={(_, newPage) => setPage(newPage)}
       />
+      <S.NavbarMobile>
+      <NavbarMobile />
+      </S.NavbarMobile>
+      
     </div>
   );
 };
