@@ -4,7 +4,7 @@ import ButtonProps from "../Button/Button";
 import Imgheart from "../../assets/heart-line.svg";
 
 interface ICardProductType {
-  image: string;
+  image: string | undefined;
   title: string;
   gems: number;
   onClick: () => void;
