@@ -1,5 +1,4 @@
 import * as S from "../Home/Home.Styled";
-import ImgProducts from "../../assets/headset.png";
 import CardBalance from "../../components/CardBalance/CardBalance";
 import FullBanner from "../../components/FullBanner/FullBanner";
 import Navigation from "../../components/Navigation/Navigation";
@@ -11,20 +10,32 @@ import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Pagination } from "@mui/material";
 
 const Home = () => {
   const navigation = useNavigate();
   const [search, setSearch] = useState("");
+  const [totalPages, setTotalPages] = useState(0);
+  const [page, setPage] = useState<number>(1);
+
+  const limit = 10;
 
   const { data, isLoading } = useQuery({
-    queryKey: ["getProducts", search],
-    queryFn: () => getProducts(search),
+    queryKey: ["getProducts", search, page],
+    queryFn: () => getProducts(search, page, limit),
   });
 
+  
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
   }
+
+  useEffect(() => {
+    if (data) {
+      setTotalPages(data.pages);
+    }
+  }, [page, data]);
 
   const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
     event
@@ -66,7 +77,7 @@ const Home = () => {
           {data?.data.map((item: IGetProducts) => (
             <CardProduct
               key={item.id}
-              image={ImgProducts}
+              image={item.image}
               title={item.name}
               gems={item.price}
               onClick={() => handleClick(item.id)}
@@ -74,6 +85,14 @@ const Home = () => {
           ))}
         </S.DivCardProducts>
       )}
+      {data?.data.length === 0 && <p>Nenhum produto encontrado.</p>}
+      <Pagination
+        page={page}
+        count={totalPages}
+        color="primary"
+        shape="rounded"
+        onChange={(_, newPage) => setPage(newPage)}
+      />
       <NavbarMobile />
     </>
   );

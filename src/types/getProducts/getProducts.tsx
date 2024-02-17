@@ -3,7 +3,7 @@ export interface IGetProducts {
   name: string;
   description: string;
   price: number;
-  image: null;
+  image: string;
   createAt: string;
   updatedAt: string;
   deleteAt: null;
