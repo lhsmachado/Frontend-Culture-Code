@@ -2,11 +2,16 @@ import { api } from "../../../hooks/axios/api";
 import { IGetProducts } from "../../../types/getProducts/getProducts";
 
 export interface IGetProductsResponse {
-  pages: number
+  pages: number;
   data: IGetProducts[];
 }
 
-export const getProducts = async (name: string | undefined ,page: number, limit: number): Promise<IGetProductsResponse | undefined > => {
+export const getProducts = async (
+  name?: string | undefined,
+  page?: number,
+  limit?: number,
+  price?: number | undefined
+): Promise<IGetProductsResponse | undefined> => {
   try {
     const accessToken = localStorage.getItem("access_token") || "";
     const response = await api.get(`/v1/products`, {
@@ -17,7 +22,7 @@ export const getProducts = async (name: string | undefined ,page: number, limit:
         name,
         page,
         limit,
-        
+        price,
       },
     });
 

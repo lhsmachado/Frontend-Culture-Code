@@ -110,3 +110,31 @@ export const DivCardProducts = styled.div`
     margin: 7% 0 0 0;
   }
 `;
+
+export const DivPagination = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 1% 0 5% 0;
+
+  @media screen and (max-width: 728px) {
+    margin: 1% 0 30% 0;
+  }
+`;
+
+export const TitleProductsNot = styled.h4`
+  margin: 5% 0 0 0;
+  font-family: Sora;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: rgb(33, 33, 33);
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
