@@ -1,6 +1,5 @@
 import * as S from "../CardProductsRedeems/CardProductsRedeems.Styled";
 import ButtonProps from "../Button/Button";
-import ImgPhone from "../../assets/headset.png";
 import ImgLeft from "../../assets/left-small.png";
 import CardRedeemFor from "../CardRedeemFor/CardRedeemFor";
 import CardMyBalance from "../CardMyBalance/CardMyBalance";
