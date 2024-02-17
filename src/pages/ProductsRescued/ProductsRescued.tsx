@@ -10,6 +10,7 @@ import { IGetProducts } from "../../types/getProducts/getProducts";
 import { getUser } from "../../services/getUser/getUser";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
+import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 import ModalPrice from "../../components/ModalPrice/ModalPrice";
 
 const ProductsRescued = () => {
@@ -129,6 +130,10 @@ const ProductsRescued = () => {
           onChange={(_, newPage) => setPage(newPage)}
         />
       </S.DivPagination>
+
+<S.NavbarMobile>
+      <NavbarMobile />
+      </S.NavbarMobile>
     </div>
   );
 };

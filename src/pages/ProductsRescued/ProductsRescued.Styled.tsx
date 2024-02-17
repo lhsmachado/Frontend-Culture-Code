@@ -111,6 +111,14 @@ export const DivCardProducts = styled.div`
   }
 `;
 
+
+export const NavbarMobile = styled.div`
+   @media screen and (max-width: 728px){
+    margin-top: 8rem;
+  }
+`
+ 
+
 export const DivPagination = styled.div`
   display: flex;
   justify-content: center;

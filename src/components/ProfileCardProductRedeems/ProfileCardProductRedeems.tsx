@@ -20,7 +20,7 @@ const ProfileCardProductRedeems = ({ data }: IProductsRedeems) => {
               </div>
               <div>
                 <S.ProductName>{item.name}</S.ProductName>
-                <S.ProductPrice>{item.price} jóias</S.ProductPrice>
+                <S.ProductPrice>{item.price} {Number(item.price) > 1 ?"jóias" : "jóia"}</S.ProductPrice>
               </div>
             </S.ProductCard>
           ))

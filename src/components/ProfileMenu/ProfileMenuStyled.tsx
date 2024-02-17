@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface IMenuStyled {
+    customColors: string
+  }
+
 export const ContainerMenu = styled.div`
     display: flex;
     flex-direction: column;
@@ -16,6 +20,7 @@ export const ButtonMenu = styled.div`
     flex-direction: row;
     align-items: center;
     padding: 1rem;
+    cursor: pointer;
 
     h4{
         font-family: Sora;
@@ -26,12 +31,13 @@ export const ButtonMenu = styled.div`
     
 `
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<IMenuStyled>`
     display: flex;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: #f3e3ff;
+    background-color: ${(props) => props.customColors};;
     border-radius: 8px;
     justify-content: center;
     align-items: center;
+;
 `
