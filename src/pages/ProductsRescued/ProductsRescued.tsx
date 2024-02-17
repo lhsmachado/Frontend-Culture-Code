@@ -1,5 +1,4 @@
 import * as S from "./ProductsRescued.Styled";
-import ImgPhone from "../../assets/headset.png";
 import CardMyBalance from "../../components/CardMyBalance/CardMyBalance";
 import Navigation from "../../components/Navigation/Navigation";
 import CardProduct from "../../components/cardProduct/cardProduct";
@@ -9,15 +8,20 @@ import { useNavigate } from "react-router-dom";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
 import { getUser } from "../../services/getUser/getUser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Pagination } from "@mui/material";
 
 const ProductsRescued = () => {
   const navigation = useNavigate();
   const [search, setSearch] = useState("");
+  const [totalPages, setTotalPages] = useState(0);
+  const [page, setPage] = useState<number>(1);
+
+  const limit = 8;
 
   const { data: products, isLoading } = useQuery({
-    queryKey: ["getProducts", search],
-    queryFn: () => getProducts(search),
+    queryKey: ["getProducts", search, page],
+    queryFn: () => getProducts(search, page, limit),
   });
 
   const { data: user, isLoading: loading } = useQuery({
@@ -28,6 +32,12 @@ const ProductsRescued = () => {
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
   }
+
+  useEffect(() => {
+    if (products) {
+      setTotalPages(products.pages);
+    }
+  }, [page, products]);
   const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
     event
   ) => {
@@ -70,7 +80,7 @@ const ProductsRescued = () => {
           {products?.data.map((item: IGetProducts) => (
             <CardProduct
               key={item.id}
-              image={ImgPhone}
+              image={item.image}
               title={item.name}
               gems={item.price}
               onClick={() => handleClick(item.id)}
@@ -78,6 +88,13 @@ const ProductsRescued = () => {
           ))}
         </S.DivCardProducts>
       )}
+      <Pagination
+        page={page}
+        count={totalPages}
+        color="primary"
+        shape="rounded"
+        onChange={(_, newPage) => setPage(newPage)}
+      />
     </div>
   );
 };

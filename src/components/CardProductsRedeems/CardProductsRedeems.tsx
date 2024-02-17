@@ -36,7 +36,7 @@ const CardProductsRedeems = ({ onClick }: ICardProductsRedeems) => {
             <CardMyBalance imagem={ImgLeft} balance={user?.credits} />
           </S.DivMyBalance>
           <S.DivImage>
-            <S.Image src={ImgPhone} />
+            <S.Image src={products?.image} alt="imagem"/>
           </S.DivImage>
           <S.DivDescription>
             <div>

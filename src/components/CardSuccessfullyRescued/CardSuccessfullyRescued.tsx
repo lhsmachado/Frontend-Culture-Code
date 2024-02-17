@@ -6,6 +6,8 @@ import ImgPersonagem from "../../assets/Group8.png";
 import ImgPhone from "../../assets/headset.png";
 import * as S from "./CardSuccessfullyRescued.Styled";
 import CardSmallProductsSuccess from "../CardSmallProductsSuccess/CardSmallProductsSuccess";
+import { getProducts } from "../../services/Products/getProducts/getProducts";
+import { useQuery } from "@tanstack/react-query";
 
 interface ICardSuccessfullyRescued {
   nameProduct: string | undefined;
@@ -19,6 +21,11 @@ const CardSuccessfullyRescued = ({
   priceProducts,
 }: ICardSuccessfullyRescued) => {
   const navigate = useNavigate();
+
+  // const { data, isLoading } = useQuery({
+  //   queryKey: ["getProducts", ],
+  //   queryFn: () => getProducts(search, page, limit),
+  // });
 
   const handleFake = () => {
     navigate("/home");
