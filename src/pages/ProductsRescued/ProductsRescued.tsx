@@ -88,13 +88,18 @@ const ProductsRescued = () => {
           ))}
         </S.DivCardProducts>
       )}
-      <Pagination
-        page={page}
-        count={totalPages}
-        color="primary"
-        shape="rounded"
-        onChange={(_, newPage) => setPage(newPage)}
-      />
+      <S.DivPagination>
+        {products?.data.length === 0 && (
+          <S.TitleProductsNot>Nenhum produto encontrado.</S.TitleProductsNot>
+        )}
+        <Pagination
+          page={page}
+          count={totalPages}
+          color="secondary"
+          shape="rounded"
+          onChange={(_, newPage) => setPage(newPage)}
+        />
+      </S.DivPagination>
     </div>
   );
 };

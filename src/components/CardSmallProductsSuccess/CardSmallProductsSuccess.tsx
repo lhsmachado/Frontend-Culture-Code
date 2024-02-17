@@ -1,7 +1,7 @@
 import * as S from "./CardSmallProductsSuccess.Styled";
 import CardRedeemFor from "../CardRedeemFor/CardRedeemFor";
 interface ICardSmallProductSuccess {
-  imagem: string;
+  imagem: string | undefined;
   titleProduct: string | undefined;
   priceProducts: number | undefined;
 }

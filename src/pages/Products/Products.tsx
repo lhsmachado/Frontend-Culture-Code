@@ -80,6 +80,7 @@ const Products = () => {
         >
           <CardSuccessfullyRescued
             nameProduct={products?.name}
+            image={products?.image}
             priceProducts={products?.price}
             balance={response?.credits}
           />
