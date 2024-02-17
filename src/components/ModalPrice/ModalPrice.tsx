@@ -1,7 +1,7 @@
 import * as S from "./ModalPrice.Styeld";
 import ButtonProps from "../Button/Button";
 import ModalEdit from "../Modal/ModalEdit";
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler } from "react";
 
 const mobileStyles = {
   content: {
