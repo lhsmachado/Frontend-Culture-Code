@@ -20,17 +20,17 @@ O propósito da aplicação Gamification é oferecer um sistema às empresas pel
 
 # Instalar projeto
 
-Para iniciar é necessário clonar o repositório para sua máquina com o comando:
+Para iniciar é necessário clonar o repositório para sua máquina com o comando: <br>
 `git clone https://github.com/arnia-linkcom-gamification/Frontend-Culture-Code.git`
 
-Após isso é necessário acessar a pasta criada atráves do comando:
+Após isso é necessário acessar a pasta criada atráves do comando:<br>
 `cd ./Frontend-Culture-Code`
 
-Agora é necessário instalar as dependencias do projeto para que ele possa rodar em sua máquina com o comando:
+Agora é necessário instalar as dependencias do projeto para que ele possa rodar em sua máquina com o comando:<br>
 `npm instal`
 
-Para rodar o projeto em ambiente de desenvolvimento você pode utilizar o comando:
+Para rodar o projeto em ambiente de desenvolvimento você pode utilizar o comando:<br>
 `npm run dev`
 
-Agora você pode acessar o projeto em seu navagador de preferencia no link:
+Agora você pode acessar o projeto em seu navagador de preferencia no link:<br>
 `http://localhost:5173` 
