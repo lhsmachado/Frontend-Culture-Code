@@ -1,17 +1,24 @@
 import * as S from "./ProfileCardJewelsStyle";
 import { IProfileJewel } from "../../types/ProfilePage/jewels";
+import diamondIcon from "../../assets/diamondIcon.svg"
 
 type IProfileJewels = {
   data?: IProfileJewel[];
+  credits?: number;
 };
 
-const ProfileCardJewels = ({ data }: IProfileJewels) => {
-
+const ProfileCardJewels = ({ data, credits }: IProfileJewels) => {
     return(
         <S.Container>
             <div>
                 <S.Title>Minhas jóias</S.Title>
+
             </div>
+            <S.BalanceContainer>
+                <S.BalanceText>Meu saldo: </S.BalanceText>
+                <S.BalanceCredits>{credits}</S.BalanceCredits>
+                <S.BalanceImage src={diamondIcon} />
+            </S.BalanceContainer>
            <S.JewelsList>
            {data? data.map((item:IProfileJewel)=>
                 (
