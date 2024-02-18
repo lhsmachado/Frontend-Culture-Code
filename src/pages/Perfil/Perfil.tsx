@@ -86,8 +86,8 @@ const Perfil = () => {
           <S.ContainerPage>
             {selecteCard == "" ? (
               <S.PictureContainer>
-                <S.ProfilePicture src={userImg} />
-                <S.ProfileName>Alex</S.ProfileName>
+                <S.ProfilePicture src={data?.profileImg? data?.profileImg : userImg} />
+                <S.ProfileName>{data?.firstName}</S.ProfileName>
               </S.PictureContainer>
             ) : (
               <S.ReturnBar>
