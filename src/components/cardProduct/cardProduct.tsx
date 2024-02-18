@@ -36,7 +36,7 @@ const CardProduct = ({ image, title, gems, onClick }: ICardProductType) => {
             customFontsize="1.2rem"
             customFontFamily="Sora"
             customHeight="3rem"
-            customBorderRadius="5px"
+            customBorderRadius="13px"
             customBorder="none"
             customPadding=""
             customWidth="100%"

@@ -42,6 +42,15 @@ export const DivContainerInputs = styled.div`
     width: 96vw;
   }
 `;
+export const TitleErro = styled.p`
+  color: red;
+  font-family: Sora;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+`;
 
 export const DivInputEmail = styled.div`
   display: flex;

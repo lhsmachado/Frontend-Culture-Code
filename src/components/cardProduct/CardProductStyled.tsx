@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 22%;
+  
 
   margin: 0 0 5% 0;
 
@@ -25,13 +26,15 @@ export const DivTitle = styled.div`
 `;
 export const DivImg = styled.div`
   width: 100%;
+  height: 150px;
   align-items: center;
   text-align: center;
+  
 
   @media screen and (max-width: 728px) {
     width: 40%;
     display: flex;
-    margin: 0 0 0 2%;
+    margin: 0 0 0 5%;
     align-items: center;
     text-align: center;
   }
@@ -46,7 +49,9 @@ export const Image = styled.img`
 
 export const DivTitleButton = styled.div`
   @media screen and (max-width: 728px) {
-    width: 300px;
+    width: 270px;
+    padding: 0 0 0 5%;
+    
   }
 `;
 
@@ -91,7 +96,7 @@ export const DivButtonProps = styled.div`
   width: 100%;
 
   @media screen and (max-width: 728px) {
-    width: 50%;
+    width: 70%;
     margin: 5% 0 0 0;
    
   }

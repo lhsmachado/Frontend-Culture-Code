@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
-import { getUser } from "../../services/getUser/getUser";
+import { getUser } from "../../services/user/getUser/getUser";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";

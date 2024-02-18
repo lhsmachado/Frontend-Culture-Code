@@ -51,6 +51,7 @@ export const ImgSearch = styled.img`
 `;
 export const ButtonImgGroup = styled.button`
   border: none;
+  background: transparent;
   @media screen and (min-width: 728px) {
     display: none;
   }

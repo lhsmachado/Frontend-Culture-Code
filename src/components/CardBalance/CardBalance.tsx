@@ -3,7 +3,7 @@ import Jewelry from "../Jewelry/Jewelry";
 
 import ImgCalendar from "../../assets/calendar-line.svg";
 import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../../services/getUser/getUser";
+import { getUser } from "../../services/user/getUser/getUser";
 
 const CardBalance = () => {
   const { data } = useQuery({ queryKey: ["getUser"], queryFn: getUser });

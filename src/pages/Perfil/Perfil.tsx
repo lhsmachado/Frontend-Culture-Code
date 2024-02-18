@@ -8,7 +8,7 @@ import userImg from "../../assets/imguser.png";
 import returnArrow from "../../assets/arrowLeft.svg";
 import * as S from "./PerfilStyle";
 import ProfileCardChangePassword from "../../components/ProfileCardChangePassword/ProfileCardChangePassword";
-import { getUser } from "../../services/getUser/getUser";
+import { getUser } from "../../services/user/getUser/getUser";
 import { useQuery } from "@tanstack/react-query";
 import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 
@@ -86,7 +86,7 @@ const Perfil = () => {
           <S.ContainerPage>
             {selecteCard == "" ? (
               <S.PictureContainer>
-                <S.ProfilePicture src={data?.profileImg? data?.profileImg : userImg} />
+                <S.ProfilePicture src={data?.profileImg || userImg} />
                 <S.ProfileName>{data?.firstName}</S.ProfileName>
               </S.PictureContainer>
             ) : (
@@ -105,7 +105,6 @@ const Perfil = () => {
           <NavbarMobile />
         </>
       )}
-      
     </>
   );
 };

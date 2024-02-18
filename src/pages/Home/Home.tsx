@@ -9,7 +9,7 @@ import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import ModalPrice from "../../components/ModalPrice/ModalPrice";
@@ -56,9 +56,9 @@ const Home = () => {
     setInputValue(1);
   };
 
-  const handleSliderChange = (event: any) => {
-    const inputValue = parseInt(event.target.value, 10);
-    setInputValue(inputValue);
+ const handleSliderChange = (e:any) => {
+    const {value} = e.target
+    setInputValue(value);
   };
 
   const handleModalButton = () => {
@@ -94,10 +94,11 @@ const Home = () => {
 
       <S.DivTitle>
         <S.Title>Produtos para você</S.Title>
+        <S.Links to={"/produtos"}>Ver tudo</S.Links>
       </S.DivTitle>
       <S.DivTitleResponsive>
         <S.TitleResponsive>Para você</S.TitleResponsive>
-        <S.LinkviewProducts to={"/"}>{`Ver tudo >`} </S.LinkviewProducts>
+        <S.LinkviewProducts to={"/produtos"}>{`Ver tudo >`} </S.LinkviewProducts>
       </S.DivTitleResponsive>
       {isLoading ? (
         <S.LoagingProducts>Carregando...</S.LoagingProducts>
@@ -114,16 +115,6 @@ const Home = () => {
           ))}
         </S.DivCardProducts>
       )}
-      <S.DivPagination>
-        {data?.data.length === 0 && <p>Nenhum produto encontrado.</p>}
-        <Pagination
-          page={page}
-          count={totalPages}
-          shape="rounded"
-          color="secondary"
-          onChange={(_, newPage) => setPage(newPage)}
-        />
-      </S.DivPagination>
       <NavbarMobile />
     </>
   );
