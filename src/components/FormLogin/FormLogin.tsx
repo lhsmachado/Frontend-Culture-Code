@@ -1,8 +1,8 @@
 import * as S from "../FormLogin/FormLoginStyled";
-import { useForm } from "react-hook-form";
+import ButtonProps from "../Button/Button"; 
 import { loginSchema } from "../../schemas/schameogin";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import ButtonProps from "../Button/Button";
 import { ILoginUser, loginUser } from "../../services/auth/loginUser";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
@@ -24,6 +24,7 @@ const FormLogin = () => {
       navigate("/home");
     },
     onError: async () => {
+      
       alert("Você não está autorizado a entrar. Verifique suas credenciais.");
     },
   });
@@ -40,7 +41,7 @@ const FormLogin = () => {
       </S.DivTitle>
       <form onSubmit={handleSubmit(onSubmit)}>
         <S.DivContainerInputs>
-          <p style={{ color: "red" }}>{errors.email?.message}</p>
+          <S.TitleErro>{errors.email?.message}</S.TitleErro>
           <S.DivInputEmail>
             <S.LabelEmail htmlFor="">E-mail</S.LabelEmail>
             <S.InputEmail
@@ -49,7 +50,7 @@ const FormLogin = () => {
               {...register("email")}
             />
           </S.DivInputEmail>
-          <p style={{ color: "red" }}>{errors.password?.message}</p>
+          <S.TitleErro>{errors.password?.message}</S.TitleErro>
           <S.DivInputPassword>
             <S.LabelPassword htmlFor="">Senha</S.LabelPassword>
             <S.InputPassword

@@ -18,7 +18,7 @@ export const TitleLoading = styled.h1`
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin: 5% 0 0 0;
+  margin: 5% 0 4% 0;
 
   @media screen and (max-width: 728px) {
     flex-direction: column;
@@ -38,6 +38,7 @@ export const DivImage = styled.div`
   text-align: center;
 
   @media screen and (max-width: 728px) {
+    margin: 5% 0 0 0;
     width: 100%;
   }
 `;
@@ -56,6 +57,14 @@ export const DivDescription = styled.div`
 
   @media screen and (max-width: 728px) {
     width: 100%;
+    
+  }
+`;
+
+export const DivTextsDescription = styled.div`
+  @media screen and (max-width: 728px) {
+    margin: 0 auto;
+    width: 98%;
   }
 `;
 
@@ -109,12 +118,14 @@ export const DivButton = styled.div`
 
   @media screen and (max-width: 1368px) {
     margin-top: 20%;
+   
   }
-
+  
   @media screen and (max-width: 728px) {
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
     margin-top: 6%;
     margin-bottom: 3%;
+    
   }
 `;

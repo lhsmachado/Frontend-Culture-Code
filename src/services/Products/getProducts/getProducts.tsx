@@ -25,7 +25,7 @@ export const getProducts = async (
         price,
       },
     });
-
+console.log(response.data)
     return response.data;
   } catch (error) {
     console.log(error);

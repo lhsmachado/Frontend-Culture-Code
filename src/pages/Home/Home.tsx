@@ -56,9 +56,9 @@ const Home = () => {
     setInputValue(1);
   };
 
-  const handleSliderChange = (event: any) => {
-    const inputValue = parseInt(event.target.value, 10);
-    setInputValue(inputValue);
+ const handleSliderChange = (e:any) => {
+    const {value} = e.target
+    setInputValue(value);
   };
 
   const handleModalButton = () => {
@@ -94,10 +94,11 @@ const Home = () => {
 
       <S.DivTitle>
         <S.Title>Produtos para você</S.Title>
+        <S.Links to={"/produtos"}>Ver tudo</S.Links>
       </S.DivTitle>
       <S.DivTitleResponsive>
         <S.TitleResponsive>Para você</S.TitleResponsive>
-        <S.LinkviewProducts to={"/"}>{`Ver tudo >`} </S.LinkviewProducts>
+        <S.LinkviewProducts to={"/produtos"}>{`Ver tudo >`} </S.LinkviewProducts>
       </S.DivTitleResponsive>
       {isLoading ? (
         <S.LoagingProducts>Carregando...</S.LoagingProducts>

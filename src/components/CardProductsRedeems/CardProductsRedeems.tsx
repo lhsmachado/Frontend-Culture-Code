@@ -6,7 +6,7 @@ import CardMyBalance from "../CardMyBalance/CardMyBalance";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProductsId } from "../../services/Products/getProducts/getProductsId";
-import { getUser } from "../../services/getUser/getUser";
+import { getUser } from "../../services/user/getUser/getUser";
 
 interface ICardProductsRedeems {
   onClick: () => void;
@@ -24,7 +24,7 @@ const CardProductsRedeems = ({ onClick }: ICardProductsRedeems) => {
     queryKey: ["getUser"],
     queryFn: getUser,
   });
-  
+
   return (
     <>
       {isLoading ? (
@@ -35,18 +35,20 @@ const CardProductsRedeems = ({ onClick }: ICardProductsRedeems) => {
             <CardMyBalance imagem={ImgLeft} balance={user?.credits} />
           </S.DivMyBalance>
           <S.DivImage>
-            <S.Image src={products?.image} alt="imagem"/>
+            <S.Image src={products?.image} alt="imagem" />
           </S.DivImage>
           <S.DivDescription>
-            <div>
-              <S.Title>{products?.name}</S.Title>
-            </div>
-            <S.DivCardRedeemFor>
-              <CardRedeemFor price={products?.price} />
-            </S.DivCardRedeemFor>
-            <S.DivTextDescription>
-              <S.TextDescription>{products?.description}</S.TextDescription>
-            </S.DivTextDescription>
+            <S.DivTextsDescription>
+              <div>
+                <S.Title>{products?.name}</S.Title>
+              </div>
+              <S.DivCardRedeemFor>
+                <CardRedeemFor price={products?.price} />
+              </S.DivCardRedeemFor>
+              <S.DivTextDescription>
+                <S.TextDescription>{products?.description}</S.TextDescription>
+              </S.DivTextDescription>
+            </S.DivTextsDescription>
 
             <S.DivButton>
               <ButtonProps

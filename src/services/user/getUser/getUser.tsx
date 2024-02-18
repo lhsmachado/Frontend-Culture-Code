@@ -1,5 +1,5 @@
-import { api } from "../../hooks/axios/api";
-import { IGetUsersTypes } from "../../types/getUsers/getUsers";
+import { api } from "../../../hooks/axios/api";
+import { IGetUsersTypes } from "../../../types/getUsers/getUsers";
 
 export const getUser = async (): Promise<IGetUsersTypes> => {
   try {
