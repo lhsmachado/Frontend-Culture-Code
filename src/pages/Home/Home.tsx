@@ -9,7 +9,7 @@ import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import ModalPrice from "../../components/ModalPrice/ModalPrice";
