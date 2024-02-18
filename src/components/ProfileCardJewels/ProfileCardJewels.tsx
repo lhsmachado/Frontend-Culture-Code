@@ -8,7 +8,6 @@ type IProfileJewels = {
 };
 
 const ProfileCardJewels = ({ data, credits }: IProfileJewels) => {
-    console.log(credits)
     return(
         <S.Container>
             <div>
