@@ -6,12 +6,19 @@ export interface IGetProductsResponse {
   data: IGetProducts[];
 }
 
-export const getProducts = async (
-  name?: string | undefined,
-  page?: number,
-  limit?: number,
-  price?: number | undefined
-): Promise<IGetProductsResponse | undefined> => {
+interface IGetProductsParams {
+  name?: string | undefined;
+  page?: number;
+  limit?: number;
+  price?: number | undefined;
+}
+
+export const getProducts = async ({
+  name,
+  page,
+  limit,
+  price,
+}: IGetProductsParams): Promise<IGetProductsResponse | undefined> => {
   try {
     const accessToken = localStorage.getItem("access_token") || "";
     const response = await api.get(`/v1/products`, {
@@ -25,7 +32,8 @@ export const getProducts = async (
         price,
       },
     });
-console.log(response.data)
+
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
