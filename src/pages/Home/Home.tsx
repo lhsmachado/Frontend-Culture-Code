@@ -12,21 +12,24 @@ import { IGetProducts } from "../../types/getProducts/getProducts";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
+import ModalPrice from "../../components/ModalPrice/ModalPrice";
 
 const Home = () => {
   const navigation = useNavigate();
   const [search, setSearch] = useState("");
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState<number>(1);
+  const [modal, setModal] = useState(false);
+  const [inputValue, setInputValue] = useState(1);
+  const [price, setPrice] = useState<number | undefined>(undefined);
 
-  const limit = 10;
+  const limit = 8;
 
   const { data, isLoading } = useQuery({
-    queryKey: ["getProducts", search, page],
-    queryFn: () => getProducts(search, page, limit),
+    queryKey: ["getProducts", search, page, price],
+    queryFn: () => getProducts(search, page, limit, price),
   });
 
-  
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
   }
@@ -45,8 +48,34 @@ const Home = () => {
     }
   };
 
+  const openModal = () => {
+    setModal(true);
+  };
+  const closeModal = () => {
+    setModal(false);
+    setInputValue(1);
+  };
+
+  const handleSliderChange = (event: any) => {
+    const inputValue = parseInt(event.target.value, 10);
+    setInputValue(inputValue);
+  };
+
+  const handleModalButton = () => {
+    setPrice(inputValue);
+    closeModal();
+  };
+
   return (
     <>
+      <ModalPrice
+        isOpen={modal}
+        onChange={handleSliderChange}
+        onClick={handleModalButton}
+        onCloseModal={closeModal}
+        sliderValue={inputValue}
+      />
+
       <FullBanner>
         <Navigation
           customColorslinks="#ffffff"
@@ -57,7 +86,7 @@ const Home = () => {
         <CardBalance />
       </FullBanner>
       <S.DivSearch>
-        <Search onKeyDown={handleSearch} />
+        <Search onKeyDown={handleSearch} onClick={openModal} />
       </S.DivSearch>
       <S.DivMediumBanner>
         <MediumBanner />
@@ -71,7 +100,7 @@ const Home = () => {
         <S.LinkviewProducts to={"/"}>{`Ver tudo >`} </S.LinkviewProducts>
       </S.DivTitleResponsive>
       {isLoading ? (
-        <p>Carregando...</p>
+        <S.LoagingProducts>Carregando...</S.LoagingProducts>
       ) : (
         <S.DivCardProducts>
           {data?.data.map((item: IGetProducts) => (
@@ -85,14 +114,16 @@ const Home = () => {
           ))}
         </S.DivCardProducts>
       )}
-      {data?.data.length === 0 && <p>Nenhum produto encontrado.</p>}
-      <Pagination
-        page={page}
-        count={totalPages}
-        color="primary"
-        shape="rounded"
-        onChange={(_, newPage) => setPage(newPage)}
-      />
+      <S.DivPagination>
+        {data?.data.length === 0 && <p>Nenhum produto encontrado.</p>}
+        <Pagination
+          page={page}
+          count={totalPages}
+          shape="rounded"
+          color="secondary"
+          onChange={(_, newPage) => setPage(newPage)}
+        />
+      </S.DivPagination>
       <NavbarMobile />
     </>
   );

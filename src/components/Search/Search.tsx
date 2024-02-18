@@ -4,9 +4,10 @@ import ImgGroup from "../../assets/Group.svg";
 
 interface ISearchProps {
   onKeyDown: any;
+  onClick: () => void;
 }
 
-const Search = ({ onKeyDown }: ISearchProps) => {
+const Search = ({ onKeyDown ,onClick}: ISearchProps) => {
   return (
     <S.Container>
       <S.ImgSearch src={ImgSearch} alt="" />
@@ -15,7 +16,9 @@ const Search = ({ onKeyDown }: ISearchProps) => {
         placeholder="O que você está buscando?"
         onKeyDown={onKeyDown}
       />
-      <S.ImgGroup src={ImgGroup} alt="" />
+      <S.ButtonImgGroup onClick={onClick}>
+        <S.ImgGroup src={ImgGroup} alt="" />
+      </S.ButtonImgGroup>
     </S.Container>
   );
 };

@@ -5,6 +5,7 @@ export const ContainerPage = styled.div`
     flex-direction: column;
     @media screen and (max-width: 728px) {
     background-color: #502B6B;
+    margin-bottom: 5rem;
 
   }
   padding: 0;

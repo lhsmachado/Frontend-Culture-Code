@@ -49,6 +49,12 @@ export const ImgSearch = styled.img`
     margin: 0 0 0 2%;
   }
 `;
+export const ButtonImgGroup = styled.button`
+  border: none;
+  @media screen and (min-width: 728px) {
+    display: none;
+  }
+`;
 
 export const ImgGroup = styled.img`
   width: 20px;
