@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
-import { getUser } from "../../services/getUser/getUser";
+import { getUser } from "../../services/user/getUser/getUser";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
@@ -19,15 +19,14 @@ const ProductsRescued = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState<number>(1);
   const [modal, setModal] = useState(false);
-  
   const [inputValue, setInputValue] = useState(1);
   const [price, setPrice] = useState<number | undefined>(undefined);
 
   const limit = 8;
 
   const { data: products, isLoading } = useQuery({
-    queryKey: ["getProducts", search, page],
-    queryFn: () => getProducts(search, page, limit , price),
+    queryKey: ["getProducts", search, page, price],
+    queryFn: () => getProducts(search, page, limit, price),
   });
 
   const { data: user, isLoading: loading } = useQuery({
@@ -44,7 +43,6 @@ const ProductsRescued = () => {
       setTotalPages(products.pages);
     }
   }, [page, products]);
-
   const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
     event
   ) => {
@@ -70,17 +68,16 @@ const ProductsRescued = () => {
     setPrice(inputValue);
     closeModal();
   };
-  console.log(handleModalButton)
+
   return (
     <div>
-     <ModalPrice
+      <ModalPrice
         isOpen={modal}
         onChange={handleSliderChange}
         onClick={handleModalButton}
         onCloseModal={closeModal}
         sliderValue={inputValue}
       />
-
       <S.DivNavigate>
         <Navigation
           home="Home"
@@ -89,13 +86,12 @@ const ProductsRescued = () => {
           customColorslinks="#292929"
         />
       </S.DivNavigate>
-      
 
       <S.DivTitle>
         <S.Title>Produtos para você resgatar</S.Title>
       </S.DivTitle>
       <S.DivSearch>
-        <Search onKeyDown={handleSearch} onClick={openModal}/>
+        <Search onKeyDown={handleSearch} onClick={openModal} />
       </S.DivSearch>
       <S.DivCardBalance>
         {loading ? (

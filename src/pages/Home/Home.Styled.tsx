@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+
 export const DivSearch = styled.div`
   position: absolute;
   display: flex;
@@ -29,7 +30,7 @@ export const DivTitle = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 80%;
+  width: 79%;
   margin-top: 5%;
 
   @media screen and (max-width: 728px) {
@@ -45,6 +46,16 @@ export const Title = styled.h3`
   line-height: 130%;
   letter-spacing: 0.2px;
   color: #212121;
+`;
+export const Links = styled(Link)`
+text-decoration: none;
+  font-family: Sora;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  color: #0e21f0;
 `;
 
 export const DivTitleResponsive = styled.div`
@@ -112,7 +123,7 @@ export const DivCardProducts = styled.div`
   @media screen and (max-width: 728px) {
     flex-direction: column;
     width: 100%;
-    margin: 2% 0 0 0;
+    margin: 2% 0 28% 0;
   }
 `;
 
@@ -125,6 +136,6 @@ export const DivPagination = styled.div`
   margin: 1% 0 5% 0;
 
   @media screen and (max-width: 728px) {
-    margin: 1% 0 30% 0;
+    display: none;
   }
 `;

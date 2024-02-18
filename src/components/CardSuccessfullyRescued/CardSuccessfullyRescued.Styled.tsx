@@ -116,6 +116,6 @@ export const DivButton = styled.div`
     width: 80%;
     margin: 0 auto;
     margin-top: 6%;
-    margin-bottom: 3%;
+    margin-bottom: 35%;
   }
 `;

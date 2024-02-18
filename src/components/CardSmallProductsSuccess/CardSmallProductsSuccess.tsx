@@ -13,17 +13,17 @@ const CardSmallProductsSuccess = ({
 }: ICardSmallProductSuccess) => {
   return (
     <S.Container>
-      <div>
+      <S.DivImage>
         <S.Imagem src={imagem} alt="" />
-      </div>
-      <div>
+      </S.DivImage>
+      <S.DivText>
         <S.DivTitle>
           <S.Title>{titleProduct}</S.Title>
         </S.DivTitle>
-        <div>
+        <S.CardRedeemFor>
           <CardRedeemFor price={priceProducts} />
-        </div>
-      </div>
+        </S.CardRedeemFor>
+      </S.DivText>
     </S.Container>
   );
 };

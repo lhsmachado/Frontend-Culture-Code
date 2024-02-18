@@ -7,7 +7,7 @@ import ModalConfirmationRescued from "../../components/ModalConfirmationRescued/
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { getProductsId } from "../../services/Products/getProducts/getProductsId";
 import { useParams } from "react-router-dom";
-import { getUser } from "../../services/getUser/getUser";
+import { getUser } from "../../services/user/getUser/getUser";
 import { ProductRescued } from "../../services/Products/productrescued/ProductRescued";
 import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 

@@ -1,40 +1,37 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
-    height: 35rem;
-    width: 31rem;
-    border-radius: 3rem;
-    background-color: #ffffff;
-    box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
-    padding-left: 4rem;
-    padding-top: 3.75rem;
+export const Container = styled.div`
+  height: 35rem;
+  width: 31rem;
+  border-radius: 3rem;
+  background-color: #ffffff;
+  box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
+  padding-left: 4rem;
+  padding-top: 3.75rem;
 
-    @media screen and (max-width: 728px) {
-        padding-left: 0;
-        padding-top: 2.75rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 3rem 3rem 0 0;
-  }
-`
-
-export const Title = styled.h2`
-    font-weight: bold;
-    font-size: 1.5rem;
-    font-family: Sora;
-    color: #212121;
-
-`
-
-export const ContainerInputs = styled.div`
-    
+  @media screen and (max-width: 728px) {
+    padding-left: 0;
+    padding-top: 2.75rem;
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
-    gap: 1rem;
+    align-items: center;
+    border-radius: 3rem 3rem 0 0;
+  }
+`;
 
-`
+export const Title = styled.h2`
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: Sora;
+  color: #212121;
+`;
+
+export const ContainerInputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  gap: 1rem;
+`;
 
 export const DivInputPassword = styled.div`
   display: flex;
@@ -47,6 +44,16 @@ export const DivInputPassword = styled.div`
   border-radius: 16px;
   background: #fff;
   box-shadow: 0px 3px 5px 0px rgba(175, 178, 187, 0.2);
+`;
+
+export const TitleErro = styled.p`
+  color: red;
+  font-family: Sora;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.2px;
 `;
 
 export const LabelPassword = styled.label`
