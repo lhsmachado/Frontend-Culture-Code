@@ -4,14 +4,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 22%;
-  
 
   margin: 0 0 5% 0;
 
   @media screen and (max-width: 728px) {
     flex-direction: row;
     width: 100%;
-    
   }
 `;
 
@@ -22,14 +20,12 @@ export const DivTitle = styled.div`
   width: 100%;
   height: 80px;
   gap: 5px;
-  
 `;
 export const DivImg = styled.div`
   width: 100%;
   height: 150px;
   align-items: center;
   text-align: center;
-  
 
   @media screen and (max-width: 728px) {
     width: 40%;
@@ -51,7 +47,6 @@ export const DivTitleButton = styled.div`
   @media screen and (max-width: 728px) {
     width: 270px;
     padding: 0 0 0 5%;
-    
   }
 `;
 
@@ -88,7 +83,6 @@ export const SubTitle = styled.h4`
   line-height: 140%;
   letter-spacing: 0.2px;
   color: #b1afaf;
-  
 `;
 
 export const DivButtonProps = styled.div`
@@ -98,6 +92,5 @@ export const DivButtonProps = styled.div`
   @media screen and (max-width: 728px) {
     width: 70%;
     margin: 5% 0 0 0;
-   
   }
 `;

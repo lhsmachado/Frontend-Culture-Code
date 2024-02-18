@@ -6,39 +6,30 @@ import Search from "../../components/Search/Search";
 import MediumBanner from "../../components/MediumBanner/MediumBanner";
 import CardProduct from "../../components/cardProduct/cardProduct";
 import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
-import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../services/Products/getProducts/getProducts";
 import { IGetProducts } from "../../types/getProducts/getProducts";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Pagination } from "@mui/material";
 import ModalPrice from "../../components/ModalPrice/ModalPrice";
+import { useQuery } from "@tanstack/react-query";
+
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Home = () => {
   const navigation = useNavigate();
   const [search, setSearch] = useState("");
-  const [totalPages, setTotalPages] = useState(0);
-  const [page, setPage] = useState<number>(1);
+
   const [modal, setModal] = useState(false);
   const [inputValue, setInputValue] = useState(1);
   const [price, setPrice] = useState<number | undefined>(undefined);
 
-  const limit = 8;
-
   const { data, isLoading } = useQuery({
-    queryKey: ["getProducts", search, page, price],
-    queryFn: () => getProducts(search, page, limit, price),
+    queryKey: ["getProducts", search, price],
+    queryFn: () => getProducts({ name: search, price }),
   });
 
   function handleClick(id: string) {
     navigation(`/produtos/${id}`);
   }
-
-  useEffect(() => {
-    if (data) {
-      setTotalPages(data.pages);
-    }
-  }, [page, data]);
 
   const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
     event
@@ -56,9 +47,9 @@ const Home = () => {
     setInputValue(1);
   };
 
- const handleSliderChange = (e:any) => {
-    const {value} = e.target
-    setInputValue(value);
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setInputValue(parseInt(value, 10));
   };
 
   const handleModalButton = () => {
@@ -98,7 +89,9 @@ const Home = () => {
       </S.DivTitle>
       <S.DivTitleResponsive>
         <S.TitleResponsive>Para você</S.TitleResponsive>
-        <S.LinkviewProducts to={"/produtos"}>{`Ver tudo >`} </S.LinkviewProducts>
+        <S.LinkviewProducts to={"/produtos"}>
+          {`Ver tudo >`}{" "}
+        </S.LinkviewProducts>
       </S.DivTitleResponsive>
       {isLoading ? (
         <S.LoagingProducts>Carregando...</S.LoagingProducts>
@@ -117,13 +110,6 @@ const Home = () => {
       )}
       <S.DivPagination>
         {data?.data.length === 0 && <p>Nenhum produto encontrado.</p>}
-        <Pagination
-          page={page}
-          count={totalPages}
-          shape="rounded"
-          color="secondary"
-          onChange={(_, newPage) => setPage(newPage)}
-        />
       </S.DivPagination>
       <NavbarMobile />
     </>

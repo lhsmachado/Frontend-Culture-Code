@@ -26,7 +26,7 @@ const ProductsRescued = () => {
 
   const { data: products, isLoading } = useQuery({
     queryKey: ["getProducts", search, page, price],
-    queryFn: () => getProducts(search, page, limit, price),
+    queryFn: () => getProducts({ name: search, page, limit, price }),
   });
 
   const { data: user, isLoading: loading } = useQuery({
@@ -59,9 +59,9 @@ const ProductsRescued = () => {
     setInputValue(1);
   };
 
-  const handleSliderChange = (event: any) => {
-    const inputValue = parseInt(event.target.value, 10);
-    setInputValue(inputValue);
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setInputValue(parseInt(value, 10));
   };
 
   const handleModalButton = () => {
@@ -131,8 +131,8 @@ const ProductsRescued = () => {
         />
       </S.DivPagination>
 
-<S.NavbarMobile>
-      <NavbarMobile />
+      <S.NavbarMobile>
+        <NavbarMobile />
       </S.NavbarMobile>
     </div>
   );
