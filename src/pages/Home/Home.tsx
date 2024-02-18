@@ -115,6 +115,16 @@ const Home = () => {
           ))}
         </S.DivCardProducts>
       )}
+      <S.DivPagination>
+        {data?.data.length === 0 && <p>Nenhum produto encontrado.</p>}
+        <Pagination
+          page={page}
+          count={totalPages}
+          shape="rounded"
+          color="secondary"
+          onChange={(_, newPage) => setPage(newPage)}
+        />
+      </S.DivPagination>
       <NavbarMobile />
     </>
   );
