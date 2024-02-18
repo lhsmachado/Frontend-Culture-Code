@@ -8,14 +8,17 @@ export const ProductRescued = async (
   try {
     const accessToken = localStorage.getItem("access_token") || "";
     console.log("Access token:", accessToken);
+
     const response = await api.post(
       `/v1/products/${productId}/user/${userId}`,
+      {},
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       }
     );
+
     console.log(response);
     console.log(response.data);
     return response.data;
