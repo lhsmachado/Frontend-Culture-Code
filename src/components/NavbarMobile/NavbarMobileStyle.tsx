@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+interface ITextStyled {
+  customColors: string
+}
+
+
 export const Container = styled.div`
     display: none;
 
@@ -32,17 +37,25 @@ export const Links = styled(Link)`
   
 `;
 
-export const ContainerImage = styled.div`
+export const ContainerImage = styled.div<ITextStyled>`
   
   display: flex;
   flex-direction: column;
   .productBorder{
-    background-color: rgb(229, 229, 229);;
+    background-color: rgb(229, 229, 229);
     border-radius: 100%;
     padding: 1rem;
     margin-top: -1rem;
   }
-  color: rgb(117, 117, 117);
+
+  .productBorderSelected{
+    background-color: #502B6B;
+    border-radius: 100%;
+    padding: 1rem;
+    margin-top: -1rem;
+  }
+ 
+  color:  ${(props) => props.customColors};;
   
 `
 
