@@ -17,7 +17,7 @@ const Perfil = () => {
   const screen = window.innerWidth;
 
   const { data } = useQuery({ queryKey: ["getUser"], queryFn: getUser });
-
+  console.log(data?.credits)
   const handleChange = (value: string) => {
     setSelectCard(value);
   };
@@ -35,7 +35,7 @@ const Perfil = () => {
       case "resgates":
         return <ProfileCardProductRedeems data={data?.products} />;
       case "joias":
-        return <ProfileCardJewels data={data?.jewels} />;
+        return <ProfileCardJewels data={data?.jewels} credits={data?.credits} />;
       case "senha":
         return <ProfileCardChangePassword />;
       case "":
@@ -56,7 +56,7 @@ const Perfil = () => {
       case "resgates":
         return <ProfileCardProductRedeems data={data?.products} />;
       case "joias":
-        return <ProfileCardJewels data={data?.jewels} />;
+        return <ProfileCardJewels data={data?.jewels} credits={data?.credits} />;
       case "senha":
         return <ProfileCardChangePassword />;
       case "":

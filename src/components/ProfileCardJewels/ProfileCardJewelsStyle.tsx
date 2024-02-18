@@ -35,15 +35,46 @@ export const JewelsContainer = styled.div`
     flex-direction: row;
     width: 95%;
     img{
-        padding: 0.5rem;
+        padding: 1rem 1rem 1rem 1rem;
         border: 1px solid #EEEEEE;
         border-radius: 1rem;
     }
 `
+export const BalanceContainer = styled.div`
+    border: 1px solid rgb(245, 244, 249);
+    border-radius: 8px;
+    width: 8.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+`
+export const BalanceCredits = styled.h3`
+    font-family: Sora;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #502B6B;
+`
+export const BalanceText = styled.h3`
+    font-family: Sora;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #000000;
+`
+export const BalanceImage = styled.img`
+    
+`
 export const JewelPic = styled.img`
-            width: 3.5rem;
+   
             height: 3.625rem;
-            padding: 0.5rem;
             border: 1px solid #EEEEEE;
             border-radius: 1rem;
 `
